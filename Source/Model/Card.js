@@ -5,10 +5,5 @@ class Card{
         this.shape=shape;
         this.filling=filling;
     }
-    numberOfSet(listCards){
-        console.log('TODO');
-    }
-    verifSet(listCards){
-        console.log('TODO');
-    }
+    
 }
