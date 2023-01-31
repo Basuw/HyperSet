@@ -3,6 +3,9 @@
 class Card5 extends Card {
     constructor(color, number, shape, filling, outline){
         super(color,number,shape,filling);
+        if(!outline){
+            throw new EmptyParamaterException('Outline');
+        }
         this.outline=outline;
     }
     /**
@@ -15,7 +18,8 @@ class Card5 extends Card {
         * @author Bastien Jacquelin
     */
     getAttributes(){
-        return [this.color,this.number,this.shape,this.filling,this.outline];
+        // return [this.color,this.number,this.shape,this.filling,this.outline];
+        return super.getAttributes().concat(this.outline);
     }
 }
 // export {Card5};

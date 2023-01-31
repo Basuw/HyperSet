@@ -1,5 +1,17 @@
 class Card{
     constructor(color, number, shape, filling){
+        if(!color){
+            throw new EmptyParamaterException('Color');
+        }
+        if(!number){
+            throw new EmptyParamaterException('Number');
+        }
+        if(!shape){
+            throw new EmptyParamaterException('Shape');
+        }
+        if(!filling){
+            throw new EmptyParamaterException('Filling');
+        }
         this.color=color;
         this.number=number;
         this.shape=shape;
@@ -15,7 +27,7 @@ class Card{
         * @author Bastien Jacquelin
      */
     getAttributes(){
-        return [this.color,this.number,this.shape,this.filling,null];
+        return [this.color,this.number,this.shape,this.filling];
     }
     
 }//export {Card}
