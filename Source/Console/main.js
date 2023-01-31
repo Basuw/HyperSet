@@ -13,5 +13,16 @@ console.log(`carte de 5 elements : ${card5.outline}`);
 console.log(`carte de 5 éléments instance de 5: ${card5 instanceof Card5}`);
 console.log(`carte de 5 éléments accès par méthode idx 0: ${card5.getAttributes()[0]}`);
 console.log(`carte de 5 éléments accès par méthode idx 4: ${card5.getAttributes()[4]}`);
-let errCard = new Card5('blue','','losange','full','pointillet');
+console.groupEnd();
+console.group('Error');
+try {
+    let errCard = new Card5('blue','','losange','full','pointillet');
+}catch(errCard){
+    if(errCard instanceof EmptyParamaterException){
+        console.log('Error in constructor');
+    }
+    else{
+        console.error(errCard);
+    }
+}
 console.groupEnd();
