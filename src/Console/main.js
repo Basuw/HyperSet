@@ -26,3 +26,20 @@ try {
     }
 }
 console.groupEnd();
+console.group('Deck');
+let deck  = new Deck();
+console.log(`Output cards ${deck.outputCards}`);
+console.log(`set already made ${deck.setMade}`);
+console.log(`All cards ${deck.allCards}`);
+console.log(`Remaining cards ${deck.remainingCards}`);
+
+console.groupEnd();
+
+
+console.group('Maths');
+let list=[];
+list.push(1);
+list.push(2);
+let gngn=Math.floor(Math.random() * list.length)
+console.log(gngn);
+console.groupEnd();
