@@ -36,14 +36,14 @@
 .column {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 7vh - 6em);
+    padding: 3em;
+    height: calc(100vh - 5rem - 7em);
 }
 
 #left {
     display: flex;
     flex-direction: column;
     width: 60%;
-    padding: 3em;
     background-color: white;
 }
 
@@ -53,7 +53,6 @@
      justify-content: space-evenly;
      align-items: center;
      width: 40%;
-     padding: 3em;
      background-color: white;
 }
 
