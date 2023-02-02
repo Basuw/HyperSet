@@ -27,19 +27,33 @@ try {
 }
 console.groupEnd();
 console.group('Deck');
-let deck  = new Deck();
-console.log(`Output cards ${deck.outputCards}`);
+let deck  = new Deck(4);
+
+console.log(`All cards with 4 attributes size ${deck.allCards.length}`);
+console.log(`size ${deck.outputCards.length}`);
+
+// deck.allCards.forEach(e => {
+//    console.log(e.color,e.number,e.shape,e.filling);
+// });
+console.log(`Output cards`);
+deck.outputCards.forEach(e => {
+   console.log(e.color,e.number,e.shape,e.filling);
+});
 console.log(`set already made ${deck.setMade}`);
-console.log(`All cards ${deck.allCards}`);
-console.log(`Remaining cards ${deck.remainingCards}`);
-
-console.groupEnd();
 
 
-console.group('Maths');
-let list=[];
-list.push(1);
-list.push(2);
-let gngn=Math.floor(Math.random() * list.length)
-console.log(gngn);
+
+
+
+
+let deck5  = new Deck(5)
+console.log(`All cards with 5 attributes size ${deck5.allCards.length}`);
+// deck5.allCards.forEach(e => {
+//    console.log(e.color,e.number,e.shape,e.filling,e.outline);
+// });
+//console.log(`Remaining cards ${deck.remainingCards}`);
+//console.log(`random : ${deck.getRandCard()}`);
+
+
+
 console.groupEnd();
