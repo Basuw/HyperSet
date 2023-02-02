@@ -8,8 +8,14 @@
     background-color: black;
 }
 
+#nav-bar li {
+    display: flex;
+    flex-grow: 1;
+}
+
 #nav-bar li a {
     display: flex;
+    flex-grow: 1;
     justify-content: center;
     font-size: 2rem;
     font-weight: bold;
