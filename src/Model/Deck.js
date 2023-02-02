@@ -1,5 +1,5 @@
 class Deck{
-    constructor(nbAttributes){
+    constructor(nbAttributes=4){
         this.allCards=this.createCards(nbAttributes);// All the cards in the game
         this.remainingCards=this.allCards;// cards in the stack
         this.outputCards=[];// 12 cards lay on the table 
@@ -17,6 +17,11 @@ class Deck{
         const random = Math.floor(Math.random() * this.remainingCards.length);
         return random;
     }
+    /**
+     * 
+     * @param {*} nbAttributes : attributes of the card, by default = 4 
+     * @returns all cards: 81 in case of 4 attributes and 1224
+     */
     createCards(nbAttributes){
         const tabColor = ['red','purple','green','blue','orange'];
         const tabShape = ['diamond','oval','wave','star','circle']
@@ -41,5 +46,27 @@ class Deck{
             }
         }
         return tabOfAllCards;
+    }
+    checkSet(selectedCards){
+        if(true){//isSet(selectedCards)){
+            selectedCards.forEach(e => {
+                this.removeFromRemainingCards(e);
+            });
+        }
+    }
+    removeFromRemainingCards(selectedCards){
+        let set=[];
+        if (selectedCards instanceof Card) {
+            for(let i=0; i<this.remainingCards.length;i++){
+                let e = this.remainingCards[i]
+                if(e.color==selectedCards.color||e.number==selectedCards.number||e.shape==selectedCards.shape||e.filling==selectedCards.filling){
+                    set.push[e];
+                    this.remainingCards.splice(i,1);
+                }
+                else{
+                    throw new UnFoundCard(e);
+                }
+            }
+        }
     }
 }
