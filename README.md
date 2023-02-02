@@ -11,7 +11,7 @@ null
 
 ## Project Convention
 
-- Functions names must be explicit and complete
+- Functions names must be explicit, complete and follow **camelCase** naming
 - Variable follow **camelCase** naming convention
 - Opening brace must be at end of line
 - Directories names my_directory
