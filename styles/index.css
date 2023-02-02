@@ -4,7 +4,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 7vh;
     list-style-type: none;
     background-color: black;
 }
@@ -15,10 +14,14 @@
     font-family: var(--font);
     text-decoration: none;
     color: white;
-    border: none;
-    padding: 0.7rem;
+    padding: 2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    transition: 0.2s;
+}
+
+#nav-bar li a:hover {
+    background-color: red;
 }
 
 /* Main */
@@ -39,7 +42,7 @@
     flex-direction: column;
     width: 60%;
     padding: 3em;
-    background-color: red;
+    background-color: white;
 }
 
 #right {
@@ -49,15 +52,29 @@
      align-items: center;
      width: 40%;
      padding: 3em;
-     background-color: blue;
+     background-color: white;
 }
 
-.home-room {
+.action-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
-    padding: 1.5em;
-    background-color: yellow;
+    padding: 1.2em;
+    padding-top: 2.1rem;
+    background-color: white;
+    border: 0.2rem solid black;
+    border-radius: 0.5em;
     font-family: var(--font);
-    font-size: 1.4em;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+
+.action-button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 h1 {
@@ -75,11 +92,12 @@ h1 {
 
 #random-set {
     height: 40vh;
-    background-color: green;
+    background-color: white;
+    border: 0.5rem solid black;
 }
 
 #info {
     display: flex;
     flex-direction: column;
-    margin-top: 4em;
+    margin-top: auto;
 }
