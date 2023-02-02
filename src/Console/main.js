@@ -41,10 +41,19 @@ deck.outputCards.forEach(e => {
 });
 console.log(`set already made ${deck.setMade}`);
 
-
-
-
-
+deck.allCards.forEach(e => {
+    console.log(e.color,e.number,e.shape,e.filling);
+ });
+let customCard=[new Card('red',1,'diamond','stripped')];
+deck.checkSet(customCard);
+console.log(`deck size :${deck.allCards.length}`);
+deck.allCards.forEach(e => {
+   console.log(e.color,e.number,e.shape,e.filling);
+});
+console.log(`remaining cars:`);
+deck.setMade.forEach(e => {
+    console.log(e.color,e.number,e.shape,e.filling);
+ });
 
 let deck5  = new Deck(5)
 console.log(`All cards with 5 attributes size ${deck5.allCards.length}`);
@@ -53,6 +62,8 @@ console.log(`All cards with 5 attributes size ${deck5.allCards.length}`);
 // });
 //console.log(`Remaining cards ${deck.remainingCards}`);
 //console.log(`random : ${deck.getRandCard()}`);
+
+
 
 
 

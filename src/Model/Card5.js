@@ -21,5 +21,8 @@ class Card5 extends Card {
         // return [this.color,this.number,this.shape,this.filling,this.outline];
         return super.getAttributes().concat(this.outline);
     }
+    equals(card){
+        return this.color===card.color && this.number===card.number && this.shape===card.shape && this.filling===card.filling && this.outline===card.outline ;
+    }
 }
 // export {Card5};
