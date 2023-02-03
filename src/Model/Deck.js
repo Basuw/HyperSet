@@ -1,10 +1,39 @@
 class Deck{
-    constructor(nbAttributes=4){
-        this.allCards=this.createCards(nbAttributes);// All the cards in the game
+    /**
+     * 
+     * @param {*} attributes : array with the attributes index for the cards
+     */
+    constructor(attributes,nbAttributes){
+        let attributesRequired=this.attributesRequiredFun(attributes);
+        attributesRequired.forEach(e=>{
+            for(let i=0;i<e.length;i++){
+                console.log(e[i]);
+            }
+            console.log(`lenght: ${e.length}`);
+            console.log('------');
+        });
+        this.allCards=this.createCards(attributesRequired,nbAttributes);// All the cards in the game
         this.remainingCards=this.allCards;// cards in the stack
         this.outputCards=[];// 12 cards lay on the table 
         this.setMade=[];// array with all the set already mades (array of set)
         //this.createDeck();
+    }
+    attributesRequiredFun(attributes){
+        let attributesRequiredTmp=[];
+        let nullArray=[0,0,0,0,0];
+        for(let i=0;i<5;i++){
+            let find=false;
+            for (let j=0;j<attributes.length;j++){
+                if(i==attributes[j]){
+                    attributesRequiredTmp.push(ATTRIBUTES[j]);
+                    find=true;
+                }
+            }
+            if(!find){
+                attributesRequiredTmp.push(nullArray);
+            }
+        }
+        return attributesRequiredTmp;
     }
     createDeck(){
         for (let i=0; i<12; i++){
@@ -19,33 +48,27 @@ class Deck{
     }
     /**
      * 
-     * @param {*} nbAttributes : attributes of the card, by default = 4 
+     * @param nbAttributes : attributes of the card, by default = 4 
      * @returns all cards: 81 in case of 4 attributes and 1224
      */
-    createCards(nbAttributes){
-        const tabColor = ['red','purple','green','blue','orange'];
-        const tabNumber = [1,2,3,4,5];
-        const tabShape = ['diamond','oval','wave','star','circle'];
-        const tabFilling = ['empty','stripped','full','pointed','squared'];
-        const tabOutline = ['full','dotted ','aa','bb','cc'];
+    createCards(attributes,nbAttributes){
         let tabOfAllCards=[];
-        for (let c=0; c<nbAttributes-1; c++){
-            for (let n=0; n<nbAttributes-1; n++){
-                for (let s=0; s<nbAttributes-1; s++){
-                    for (let f=0; f<nbAttributes-1; f++){
-                        if(nbAttributes==4){
-                            tabOfAllCards.push(new Card(tabColor[c],tabNumber[n],tabShape[s],tabFilling[f]));
-                        }
-                        else{
-                            for(let o=0;o<nbAttributes-1;o++){
-                                tabOfAllCards.push(new Card5(tabColor[c],tabNumber[n],tabShape[s],tabFilling[f],tabOutline[o]));
-                            }
+
+        for (let c=0; c<this.lower(attributes[0].length,nbAttributes)-1; c++){
+            for (let n=0; n<this.lower(attributes[1].length,nbAttributes)-1; n++){
+                for (let s=0; s<this.lower(attributes[2].length,nbAttributes)-1; s++){
+                    for (let f=0; f<this.lower(attributes[3].length,nbAttributes)-1; f++){
+                        for (let o=0; o<this.lower(attributes[4].length,nbAttributes)-1; o++){
+                            tabOfAllCards.push(new Card(attributes[0][c],attributes[1][n],attributes[2][s],attributes[3][f],attributes[4][o]));
                         }
                     }
                 }
             }
         }
         return tabOfAllCards;
+    }
+    lower(length,nbAttributes){
+        return nbAttributes<length?nbAttributes:length;
     }
     checkSet(selectedCards){
         if(true){//isSet(selectedCards)){
