@@ -29,5 +29,8 @@ class Card{
     getAttributes(){
         return [this.color,this.number,this.shape,this.filling];
     }
+    equals(card){
+        return this.color===card.color && this.number===card.number && this.shape===card.shape && this.filling===card.filling;
+    }
     
 }//export {Card}
