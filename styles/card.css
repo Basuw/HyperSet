@@ -16,3 +16,9 @@
   /* height: calc(10rem - 6em);
   width: calc(20rem - 6em); */
 }
+
+#main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
