@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 20rem;
+  padding: 3em;
+  border: 0.3em solid black;
+  border-radius: 2em;
+  background-color: white;
+}
+
+.item {
+  margin: 1rem;
+  /* height: calc(10rem - 6em);
+  width: calc(20rem - 6em); */
+}
