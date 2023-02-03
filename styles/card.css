@@ -6,6 +6,7 @@
   height: 10rem;
   width: 20rem;
   padding: 3em;
+  margin: 1.7rem; /* for better display */
   border: 0.3em solid black;
   border-radius: 2em;
   background-color: white;
@@ -13,8 +14,6 @@
 
 .item {
   margin: 1rem;
-  /* height: calc(10rem - 6em);
-  width: calc(20rem - 6em); */
 }
 
 #main {
