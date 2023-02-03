@@ -23,44 +23,66 @@
  * }
  *
  *
- * */ 
+ * */
+
+
 function main()
 {
     // "Stub de test"
+    let card1 = new Card("Purple","1","Triangle","Full");   
+    let card2 = new Card("Purple","2","Triangle","Full");   
+    let card3 = new Card("Purple","3","Triangle","Full");
+    let card8 = new Card("Purple","4","Triangle","Full");
+    let card9 = new Card("Purple","5","Triangle","Full");
+    let card0 = new Card("Purple","6","Triangle","Full");
+    let card10 = new Card("Purple","7","Triangle","Full");
     
+    let card4 = new Card("Purple","1","Triangle","Full");   
+    let card5 = new Card("Purple","2","Triangle","Full");   
+    let card6 = new Card("Purple","1","Triangle","Full");   
 
+    console.group("TEST TRUE")
+    if(isSet([card1,card2,card3,card8,card9,card0,card10]))
+    {
+        console.log("TRUE")
+    }
+    else
+    {
+        console.log("FALSE")
+    }
+    console.groupEnd()
 }
 
-function isSet(card)
+function isSet(cards)
 {
-    let matrice = [];
+    let attributesMatrix = [];
 
-    card.forEach(element => {
-        matrice.push(element.getAttribute());
+    cards.forEach(element => {
+        attributesMatrix.push(element.getAttributes());
     });
     // Idéalement check si toute les listes d'attributs sont de même taille
-    for (let i = 0; i < matrice[0]; i++) {
-        let listAttrib = []
-        for (let j = 0; j < matrice[i]; j++) {
-            listAttrib.push(j);
+    for(let i = 0; i < attributesMatrix[0].length; i++) {
+        let listAttributes = []
+        for(let j = 0; j < attributesMatrix.length; j++) {
+            listAttributes.push(attributesMatrix[j][i]);
         }
-        if(!checkattrib(j)){
+        if(!checkAttributes(listAttributes)){
             return false;
         }
-    return true;        
     }
+    return true;        
 }
 
 
-function checkattrib(attribs){
+function checkAttributes(attributes){
     let orderingMethod = "null"; // Can only take ["null", "same", "different"]
-    attribs.forEach(function callback(value, index)
-    {
-        if(!index === attribs.length)
+    let boolLoop = true;
+    attributes.forEach((value, index) => {
+        if(index !== attributes.length)
         {
-            for (let i = index+1; i < array.length; i++)
+            for (let i = index+1; i < attributes.length; i++)
             {
-                if(attribs[i] === value)
+                if(attributes[i] === value)
                 {
                     if(orderingMethod === "null" || orderingMethod === "same")
                     {
@@ -68,7 +90,7 @@ function checkattrib(attribs){
                     }
                     else
                     {
-                        return false;
+                        boolLoop = false;
                     }
                 }
                 else
@@ -79,12 +101,12 @@ function checkattrib(attribs){
                     }
                     else
                     {
-                        return false
+                        boolLoop = false
                     }
                 }
                 
             }
         }
     });
-    return true;
+    return boolLoop === true;
 }
