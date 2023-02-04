@@ -41,6 +41,16 @@
       </pattern>
 
       <pattern
+        id="pattern-grid"
+        width="30"
+        height="30"
+        patternUnits="userSpaceOnUse"
+      >
+        <rect width="7.5" height="30" fill="#fff" />
+        <rect width="30" height="7.5" fill="#fff" />
+      </pattern>
+
+      <pattern
         id="pattern-dot"
         width="40"
         height="40"
@@ -68,6 +78,16 @@
           fill="url(#pattern-dot)"
         />
       </mask>
+
+      <mask id="mask-grid">
+        <rect
+          x="0"
+          y="0"
+          width="200"
+          height="400"
+          fill="url(#pattern-grid)"
+        />
+      </mask>
     </defs>
   </svg>
 
@@ -84,7 +104,7 @@
       </svg>
 
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#squiggle" fill="#008002" mask="url(#mask-stripe)"></use>
+        <use href="#squiggle" fill="#008002" mask="url(#mask-grid)"></use>
         <use href="#squiggle" stroke="#008002" fill="none" stroke-width="18"></use>
       </svg>
     </div>
