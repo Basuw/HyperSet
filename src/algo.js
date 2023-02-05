@@ -1,58 +1,3 @@
-// Pseudo code
-//
-/*
- * function checkReslt(array <Cards>)
- * {
- *      new array<array<Attrib>> matrice = vide
- *
- *      forEach(array: value)
- *      {
- *          matrice.add(value.getAttrib)
- *      }
- *      Check all length of matrice
- *      for(i = 0; i<matrice[0])
- *          let array<attribut> tab
- *          for (j=0; j<len(matrice))
- *              tab.push matrice[j][i]
- *          if(!checkatrib(tab))
- *          {
- *              return false;
- *          }
- *      return true;
- *
- * }
- *
- *
- * */
-
-
-function main()
-{
-    // "Stub de test"
-    let card1 = new Card("Purple","1","Triangle","Full");   
-    let card2 = new Card("Purple","2","Triangle","Full");   
-    let card3 = new Card("Purple","3","Triangle","Full");
-    let card8 = new Card("Purple","4","Triangle","Full");
-    let card9 = new Card("Purple","5","Triangle","Full");
-    let card0 = new Card("Purple","6","Triangle","Full");
-    let card10 = new Card("Purple","7","Triangle","Full");
-    
-    let card4 = new Card("Purple","1","Triangle","Full");   
-    let card5 = new Card("Purple","2","Triangle","Full");   
-    let card6 = new Card("Purple","1","Triangle","Full");   
-
-    console.group("TEST TRUE")
-    if(isSet([card1,card2,card3,card8,card9,card0,card10]))
-    {
-        console.log("TRUE")
-    }
-    else
-    {
-        console.log("FALSE")
-    }
-    console.groupEnd()
-}
-
 function isSet(cards)
 {
     let attributesMatrix = [];
@@ -110,3 +55,61 @@ function checkAttributes(attributes){
     });
     return boolLoop === true;
 }
+
+
+function nbrSets(deck, setSize){
+    matrix = []
+    // Remplie la matrice des valeurs du deck
+    for (i=0;i<setSize;i++){
+        for (j=0;j<(deck.length - i +1);j++){
+            // Check si ca marche bien
+            matrix[i] = []
+            matrix[i].push(deck[j]);
+        }
+    }
+
+    res = 0
+    currentSet = []
+    for (p =0 ;p < matrix[0].length;p++){
+        res += forEachMember(0,p,matrix,currentSet,res)
+    }
+    return res
+}
+
+function forEachMember(x,y,matrix,currentSet,res){
+    currentSet.push(matrix[x][y])
+    if(matrix.length == x+1){
+        if(isSet(currentSet)){
+            return res + 1
+        }
+        else{
+            return res
+        }
+    }
+    else{
+        for(i=y; i< matrix[x].length; i++){
+            res += forEachMember(x+1,i,matrix, currentSet,res)
+        }
+        return res
+    }
+
+}
+
+// "Stub de test"
+let card1 = new Card("Purple","1","Triangle","Full");   
+let card2 = new Card("Purple","2","Triangle","Full");   
+let card3 = new Card("Purple","3","Triangle","Full");
+let card8 = new Card("Purple","4","Triangle","Full");
+let card9 = new Card("Purple","5","Triangle","Full");
+let card0 = new Card("Purple","6","Triangle","Full");
+let card10 = new Card("Purple","7","Triangle","Full");
+
+let card4 = new Card("Purple","1","Triangle","Full");   
+let card5 = new Card("Purple","2","Triangle","Full");   
+let card6 = new Card("Purple","1","Triangle","Full");   
+
+
+let deck = [card1,card2,card3,card8,card9,card0,card10]
+
+let nbrSet = nbrSets(deck,3)
+
