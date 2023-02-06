@@ -36,7 +36,7 @@ class Deck{
      */
     createCards(attributes){
         let factory = new Factory(attributes)
-        return factory.concreteCardCreation();
+        return factory.product
     }
     checkSet(selectedCards){
         if(true){//isSet(selectedCards)){

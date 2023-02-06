@@ -4,6 +4,8 @@ class Factory{
         this.product=this.concreteCardCreation(arrayOfAttributes,length);
     }
     attributesRequiredFun(arrayOfAttributes,length){
+        console.log("arr attr")
+        console.log(arrayOfAttributes)
         let attributesRequiredTmp=[];
         let nullArray=[0,0,0,0,0];
         for(let i=0;i<5;i++){
@@ -18,6 +20,10 @@ class Factory{
                 attributesRequiredTmp.push(nullArray);
             }
         }
+        attributesRequiredTmp.forEach(e=>{
+            console.log("tab index")
+            console.log(e);
+        });
         return attributesRequiredTmp;
     }
     concreteCardCreation(arrayOfAttributes, length){
@@ -45,15 +51,13 @@ class Factory{
                                 tabOfAllCards.push(new Card4WithoutNumber(attributes[0][n],attributes[2][s],attributes[3][f],attributes[4][o]));
                             }
                             else if(attributes[2][0]===0){
+                                console.log("jrentre la frro")
                                 tabOfAllCards.push(new Card4WithoutShape(attributes[0][n],attributes[1][s],attributes[3][f],attributes[4][o]));
                             }
                             else if(attributes[3][0]===0){
-                                console.log(attributes[0][n],attributes[1][s],attributes[2][f],attributes[4][o]);
                                 tabOfAllCards.push(new Card4WithoutFilling(attributes[0][n],attributes[1][s],attributes[2][f],attributes[4][o]));
                             }
                             else if(attributes[4][0]===0){
-                                console.log('rentre la');
-                                console.log(attributes[0][n],attributes[1][s],attributes[2][f],attributes[3][o]);
                                 tabOfAllCards.push(new Card4WithoutOutline(attributes[0][n],attributes[1][s],attributes[2][f],attributes[3][o]));
                             }
                         }
