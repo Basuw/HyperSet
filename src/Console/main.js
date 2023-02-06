@@ -3,12 +3,14 @@
 //import {Card} from '../Model/Card';
 
 console.log("~#Test#~");
-let card4 = new Card('red','2','losange','full');
+let card4 = new Card4WithoutOutline('red','2','losange','full');
 console.group('Carte 4 attributes');
 console.log(`carte de 4 elements : ${card4.color}`);
 console.groupEnd();
+
 let card5 = new Card5('blue','2','losange','full','pointillet');
 console.group('Carte 5 attributes');
+console.log(`carte de 5 elements : ${card5.color}`);
 console.log(`carte de 5 elements : ${card5.outline}`);
 console.log(`carte de 5 éléments instance de 5: ${card5 instanceof Card5}`);
 console.log(`carte de 5 éléments accès par méthode idx 0: ${card5.getAttributes()[0]}`);
@@ -26,19 +28,22 @@ try {
     }
 }
 console.groupEnd();
-console.group('Deck');
-let deck  = new Deck([0,1,2,3],4);
 
+
+console.group('Deck');
+let deck  = new Deck([0,1,2,3]);
 console.log(`All cards with 4 attributes size ${deck.allCards.length}`);
 console.log(`size output ${deck.outputCards.length}`);
-// Display all cards
-// deck.allCards.forEach(e => {
-//    console.log(e.color,e.number,e.shape,e.filling);
-// });
-console.log(`Output cards`);
-deck.outputCards.forEach(e => {
+//Display all cards
+console.log(`All cards`);
+console.log(deck.allCards)
+deck.allCards.forEach(e => {
    console.log(e.color,e.number,e.shape,e.filling);
 });
+console.log(`Output cards`);
+// deck.outputCards.forEach(e => {
+//    console.log(e.getAttributes());
+// });
 console.log(`set already made ${deck.setMade}`);
 
 
