@@ -3,12 +3,14 @@
 //import {Card} from '../Model/Card';
 
 console.log("~#Test#~");
-let card4 = new Card('red','2','losange','full');
+let card4 = new Card4WithoutOutline('red','2','losange','full');
 console.group('Carte 4 attributes');
 console.log(`carte de 4 elements : ${card4.color}`);
 console.groupEnd();
+
 let card5 = new Card5('blue','2','losange','full','pointillet');
 console.group('Carte 5 attributes');
+console.log(`carte de 5 elements : ${card5.color}`);
 console.log(`carte de 5 elements : ${card5.outline}`);
 console.log(`carte de 5 éléments instance de 5: ${card5 instanceof Card5}`);
 console.log(`carte de 5 éléments accès par méthode idx 0: ${card5.getAttributes()[0]}`);
@@ -26,20 +28,57 @@ try {
     }
 }
 console.groupEnd();
+
+
 console.group('Deck');
-let deck  = new Deck();
-console.log(`Output cards ${deck.outputCards}`);
+let deck  = new Deck([0,1,2,3]);
+console.log(`All cards : ${deck.allCards.length}`);
+//Display all cards
+console.log(`All cards display`);
+// deck.allCards.forEach(e => {
+//    console.log(e.color,e.number,e.shape,e.filling);//no outline
+//    //console.log(e.color,e.number,e.filling,e.outline);//no shape
+//    //console.log(e.color,e.number,e.shape,e.outline);//no filling
+// });
+console.log(`remaining cards : ${deck.remainingCards.length}`)
+// deck.remainingCards.forEach(e => {
+//     console.log(e.getAttributes());
+//  });
+console.log(`size output ${deck.outputCards.length}`);
+console.log(`Output cards`);
+deck.outputCards.forEach(e => {
+   console.log(e.getAttributes());
+});
 console.log(`set already made ${deck.setMade}`);
-console.log(`All cards ${deck.allCards}`);
-console.log(`Remaining cards ${deck.remainingCards}`);
+// deck.setMade.forEach(e => {
+//     console.log(e.color,e.number,e.shape,e.filling);
+//  });
 
-console.groupEnd();
+console.log("Card to remove: ")
+console.log(deck.outputCards[0].getAttributes(),deck.outputCards[1].getAttributes(),deck.outputCards[2].getAttributes())
+let customCard=[deck.outputCards[0],deck.outputCards[1],deck.outputCards[2]];
+deck.checkSet(customCard);
+console.log(`remaining cards : ${deck.remainingCards.length}`)
+console.log(`All cards : ${deck.allCards.length}`)
+
+console.log(`remaining cards : ${deck.remainingCards.length}`)
+// deck.remainingCards.forEach(e => {
+//     console.log(e.getAttributes());
+//  });
+
+console.log(`size output ${deck.outputCards.length}`);
+console.log(`Output cards`);
+deck.outputCards.forEach(e => {
+   console.log(e.getAttributes());
+});
 
 
-console.group('Maths');
-let list=[];
-list.push(1);
-list.push(2);
-let gngn=Math.floor(Math.random() * list.length)
-console.log(gngn);
+//let deck5  = new Deck([0,1,2,3,4]);
+//console.log(`All cards with 5 attributes size ${deck5.allCards.length}`);
+// deck5.allCards.forEach(e => {
+//    console.log(e.color,e.number,e.shape,e.filling,e.outline);
+// });
+//console.log(`Remaining cards ${deck.remainingCards}`);
+//console.log(`random : ${deck.getRandCard()}`);
+
 console.groupEnd();
