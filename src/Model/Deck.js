@@ -4,9 +4,10 @@ class Deck{
      * @param {*} attributes : array with the attributes index for the cards
      */
     constructor(attributes){
-        console.log(attributes);
+        //console.log(attributes);
         this.allCards=this.createCards(attributes);// All the cards in the game
-        this.remainingCards=this.allCards;// cards in the stack
+        this.remainingCards=[]
+        this.remainingCards=this.remainingCards.concat(this.allCards);// cards in the stack
         this.outputCards=[];// 12 cards lay on the table 
         this.setMade=[];// array with all the set already mades (array of set)
         this.createDeck();
@@ -41,7 +42,7 @@ class Deck{
     checkSet(selectedCards){
         if(true){//isSet(selectedCards)){
             selectedCards.forEach(e => {
-                this.removeFromRemainingCards(e);
+                this.removeFromoutputCards(e);
             });
         }
     }
@@ -49,13 +50,13 @@ class Deck{
      * 
      * @param {*} selectedCards wehn a set is made, need to remove the card from the array remainingCards
      */
-    removeFromRemainingCards(selectedCards){//better check of card type more opti
+    removeFromoutputCards(selectedCards){//better check of card type more opti
         let set=[];
-        for(let i=0; i<this.allCards.length;i++){
-            let e = this.allCards[i]
+        for(let i=0; i<this.outputCards.length;i++){
+            let e = this.outputCards[i]
             if(e.equals(selectedCards)){
                 set.push(e);
-                this.allCards.splice(i,1);
+                this.outputCards.splice(i,1);
                 console.log("card remove : "+e.color,e.number,e.filling,e.shape);
             }
         }

@@ -3,27 +3,26 @@ class Factory{
         let length=arrayOfAttributes.length
         this.product=this.concreteCardCreation(arrayOfAttributes,length);
     }
+    inArray(i,arrayOfAttributes){
+        let finded=false;
+        for (let j=0;j<arrayOfAttributes.length;j++){
+            if(i==arrayOfAttributes[j]){
+                finded=true;
+            }
+        }
+        return finded
+    }
     attributesRequiredFun(arrayOfAttributes,length){
-        console.log("arr attr")
-        console.log(arrayOfAttributes)
         let attributesRequiredTmp=[];
         let nullArray=[0,0,0,0,0];
         for(let i=0;i<5;i++){
-            let find=false;
-            for (let j=0;j<length;j++){
-                if(i==arrayOfAttributes[j]){
-                    attributesRequiredTmp.push(ATTRIBUTES[j]);
-                    find=true;
-                }
-            }
-            if(!find){
+            if(!this.inArray(i,arrayOfAttributes)){
                 attributesRequiredTmp.push(nullArray);
             }
+            else{
+                attributesRequiredTmp.push(ATTRIBUTES[i]);
+            }
         }
-        attributesRequiredTmp.forEach(e=>{
-            console.log("tab index")
-            console.log(e);
-        });
         return attributesRequiredTmp;
     }
     concreteCardCreation(arrayOfAttributes, length){
@@ -51,7 +50,6 @@ class Factory{
                                 tabOfAllCards.push(new Card4WithoutNumber(attributes[0][n],attributes[2][s],attributes[3][f],attributes[4][o]));
                             }
                             else if(attributes[2][0]===0){
-                                console.log("jrentre la frro")
                                 tabOfAllCards.push(new Card4WithoutShape(attributes[0][n],attributes[1][s],attributes[3][f],attributes[4][o]));
                             }
                             else if(attributes[3][0]===0){

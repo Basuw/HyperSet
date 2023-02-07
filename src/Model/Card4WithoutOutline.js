@@ -1,6 +1,9 @@
 class Card4WithoutOutline extends Card{
     constructor(color, number, shape, filling){
         super();
+        if(color==''){
+            throw new EmptyParamaterException('Color');
+        }
         if(number==''){
             throw new EmptyParamaterException('Number');
         }
@@ -10,16 +13,13 @@ class Card4WithoutOutline extends Card{
         if(filling==''){
             throw new EmptyParamaterException('Filling');
         }
-        if(color==''){
-            throw new EmptyParamaterException('Color');
-        }
+        this.color=color;
         this.number=number;
         this.shape=shape;
         this.filling=filling;
-        this.color=color;
     }
     getAttributes(){
-        return [this.number,this.shape,this.filling,this.color];
+        return [this.color,this.number,this.shape,this.filling];
     }
     equals(card){
         return this.number===card.number && this.shape===card.shape && this.filling===card.filling && this.color===card.color;
