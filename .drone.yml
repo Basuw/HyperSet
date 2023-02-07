@@ -27,5 +27,5 @@ steps:
       CONTAINERNAME: hyperset
       COMMAND: create
       OVERWRITE: true
-      ADMINS: aurianjault
+      ADMINS: aurianjault,raphaellacote,bastienjacquelin,remiarnal
     depends_on : [hyperset-build]
