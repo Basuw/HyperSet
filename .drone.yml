@@ -8,7 +8,7 @@ trigger:
 
 steps:
 
-  - name: hyperset-docker-build
+  - name: hyperset-build
     image: plugins/docker
     settings:
       dockerfile: Dockerfile
@@ -20,10 +20,12 @@ steps:
       password:
         from_secret: registry_password
 
-  - name: docker-hyperset-deployment
+  - name: hyperset-deployment
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
     environment:
       IMAGENAME: hub.codefirst.iut.uca.fr/remi.arnal/hyper-set:latest
       CONTAINERNAME: hyperset
       COMMAND: create
       OVERWRITE: true
+      ADMINS: aurian.jault
+      depends_on : [hyperset-build]
