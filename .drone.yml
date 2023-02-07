@@ -27,5 +27,5 @@ steps:
       CONTAINERNAME: hyperset
       COMMAND: create
       OVERWRITE: true
-      ADMINS: aurian.jault
+      ADMINS: aurianjault
       depends_on : [hyperset-build]
