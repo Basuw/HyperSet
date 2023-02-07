@@ -1,1 +1,29 @@
+kind: pipeline
+type: docker
+name: ToutDoux
 
+trigger:
+  event:
+    - push
+
+steps:
+
+  - name: hyperset-docker-build
+    image: plugins/docker
+    settings:
+      dockerfile: Dockerfile
+      context: .
+      registry: hub.codefirst.iut.uca.fr
+      repo: hub.codefirst.iut.uca.fr/remi.arnal/hyper-set
+      username:
+        from_secret: registry_username
+      password:
+        from_secret: registry_password
+
+  - name: docker-hyperset-deployment
+    image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
+    environment:
+      IMAGENAME: hub.codefirst.iut.uca.fr/remi.arnal/hyper-set:latest
+      CONTAINERNAME: hyperset
+      COMMAND: create
+      OVERWRITE: true
