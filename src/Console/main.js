@@ -47,14 +47,15 @@ console.log(`remaining cards : ${deck.remainingCards.length}`)
 //     console.log(e.getAttributes());
 //  });
 console.log(`size output ${deck.outputCards.length}`);
-console.log(`Output cards`);
+console.group('Output cards');
 deck.outputCards.forEach(e => {
    console.log(e.getAttributes());
 });
+console.groupEnd();
 console.log(`set already made ${deck.setMade}`);
-// deck.setMade.forEach(e => {
-//     console.log(e.color,e.number,e.shape,e.filling);
-//  });
+deck.setMade.forEach(e => {
+    console.log(e.color,e.number,e.shape,e.filling);
+ });
 
 
 // CHECK SET
@@ -66,7 +67,6 @@ let customCard=[deck.outputCards[0],deck.outputCards[1],deck.outputCards[2]];
 deck.checkSet(customCard);
 console.log(`remaining cards : ${deck.remainingCards.length}`)
 console.log(`All cards : ${deck.allCards.length}`)
-console.log(`remaining cards : ${deck.remainingCards.length}`)
 // deck.remainingCards.forEach(e => {
 //     console.log(e.getAttributes());
 //  });
@@ -75,9 +75,14 @@ console.group('Output cards');
 deck.outputCards.forEach(e => {
    console.log(e.getAttributes());
 });
-console.log(`nbCards : ${deck.nbCards}`);
 console.groupEnd();
 
+console.group('set made');
+console.log(`set already made : ${deck.setMade.length}`);
+deck.setMade.forEach(e => {
+    console.log(e.color,e.number,e.shape,e.filling);
+ });
+ console.groupEnd();
 
 //let deck5  = new Deck([0,1,2,3,4]);
 //console.log(`All cards with 5 attributes size ${deck5.allCards.length}`);

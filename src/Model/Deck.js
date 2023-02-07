@@ -51,9 +51,7 @@ class Deck{
      */
     checkSet(selectedCards){
         if(true){//isSet(selectedCards)){
-            selectedCards.forEach(e => {
-                this.removeFromoutputCards(e);
-            });
+            this.removeFromoutputCards(selectedCards);
         }
     }
     /**
@@ -63,15 +61,17 @@ class Deck{
      */
     removeFromoutputCards(selectedCards){//better check of card type more opti
         let set=[];
-        for(let i=0; i<this.outputCards.length;i++){
-            let e = this.outputCards[i]
-            if(e.equals(selectedCards)){
-                set.push(e);
-                this.outputCards.splice(i,1);
-                console.log("card remove : "+e.color,e.number,e.filling,e.shape);
+        selectedCards.forEach(element => {
+            for(let i=0; i<this.outputCards.length;i++){
+                let e = this.outputCards[i]
+                if(e.equals(element)){
+                    set.push(e);
+                    this.outputCards.splice(i,1);
+                }
             }
-        }
-        if(set.length!=1){
+        });
+
+        if(set.length<1){
             throw new UnFoundCardException(selectedCards);
         }
         else{
