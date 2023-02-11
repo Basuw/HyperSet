@@ -29,3 +29,11 @@ steps:
       OVERWRITE: true
       ADMINS: aurianjault,raphaellacote,bastienjacquelin,remiarnal
     depends_on : [hyperset-build]
+
+  - name: code-analysis
+    environment:
+        SONAR_TOKEN:
+          from_secret: SONAR_TOKEN
+    commands:
+      - sonar-scanner -Dsonar.projectKey=hyperset -Dsonar.sources=. -Dsonar.host.url=https://codefirst.iut.uca.fr/sonar
+    depends_on: [ hyperset-build ]
