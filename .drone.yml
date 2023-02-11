@@ -36,5 +36,5 @@ steps:
         SONAR_TOKEN:
           from_secret: SONAR_TOKEN
     commands:
-      - sonar-scanner -Dsonar.projectKey=hyperset -Dsonar.sources=. -Dsonar.host.url=https://codefirst.iut.uca.fr/sonar -Dsonar.login=$${SONAR_TOKEN}
+      - sonarscanner -Dsonar.projectKey=hyperset -Dsonar.sources=. -Dsonar.host.url=https://codefirst.iut.uca.fr/sonar -Dsonar.login=$${SONAR_TOKEN}
     depends_on: [ hyperset-build ]
