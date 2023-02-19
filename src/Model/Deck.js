@@ -1,74 +1,82 @@
 class Deck{
-    constructor(nbAttributes=4){
-        this.allCards=this.createCards(nbAttributes);// All the cards in the game
-        this.remainingCards=this.allCards;// cards in the stack
+    /**
+     * 
+     * @param {*} attributes : array with the attributes index for the cards
+     * @author Bastien Jacquelin
+     */
+    constructor(attributes,nbCards){
+        //console.log(attributes);
+        this.allCards=this.createCards(attributes);// All the cards in the game
+        this.remainingCards=[]
+        this.nbCards=nbCards;
+        this.remainingCards=this.remainingCards.concat(this.allCards);// cards in the stack
         this.outputCards=[];// 12 cards lay on the table 
         this.setMade=[];// array with all the set already mades (array of set)
-        //this.createDeck();
+        this.createDeck(12);
     }
-    createDeck(){
-        for (let i=0; i<12; i++){
+    /**
+     * @brief creation of the deck : 12 cards lay in front of the player
+     * @author Bastien Jacquelin
+     */
+    createDeck(nbCards){
+        for (let i=0; i<nbCards; i++){
             const rand = this.getRandCard();
             this.outputCards.push(this.remainingCards[rand]);
             this.remainingCards.splice(rand,1);
         }
     }
+    /**
+     * 
+     * @returns random number in range of the array size 
+     * @author Bastien Jacquelin
+     */
     getRandCard(){
         const random = Math.floor(Math.random() * this.remainingCards.length);
         return random;
     }
     /**
      * 
-     * @param {*} nbAttributes : attributes of the card, by default = 4 
-     * @returns all cards: 81 in case of 4 attributes and 1224
+     * @param attributes : index of the attributes used
+     * @returns all cards: 81 in case of 4 attributes and 1024 if 5 attributes
+     * @author Bastien Jacquelin
      */
-    createCards(nbAttributes){
-        const tabColor = ['red','purple','green','blue','orange'];
-        const tabNumber = [1,2,3,4,5];
-        const tabShape = ['diamond','oval','wave','star','circle'];
-        const tabFilling = ['empty','stripped','full','pointed','squared'];
-        const tabOutline = ['full','dotted ','aa','bb','cc'];
-        let tabOfAllCards=[];
-        for (let c=0; c<nbAttributes-1; c++){
-            for (let n=0; n<nbAttributes-1; n++){
-                for (let s=0; s<nbAttributes-1; s++){
-                    for (let f=0; f<nbAttributes-1; f++){
-                        if(nbAttributes==4){
-                            tabOfAllCards.push(new Card(tabColor[c],tabNumber[n],tabShape[s],tabFilling[f]));
-                        }
-                        else{
-                            for(let o=0;o<nbAttributes-1;o++){
-                                tabOfAllCards.push(new Card5(tabColor[c],tabNumber[n],tabShape[s],tabFilling[f],tabOutline[o]));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return tabOfAllCards;
+    createCards(attributes){
+        let factory = new Factory(attributes)
+        return factory.product
     }
+    /**
+     * @brief verification of the validity of the set selected
+     * @param {*} selectedCards array of cards : set 
+     * @author Bastien Jacquelin
+     */
     checkSet(selectedCards){
         if(true){//isSet(selectedCards)){
-            selectedCards.forEach(e => {
-                this.removeFromRemainingCards(e);
-            });
+            this.removeFromoutputCards(selectedCards);
         }
     }
-    removeFromRemainingCards(selectedCards){//better check of card type more opti
+    /**
+     * @brief when a set is made, need to remove the card from the array remainingCards
+     * @param {*} selectedCards cards which need to be removed from the outputcards
+     * @author Bastien Jacquelin
+     */
+    removeFromoutputCards(selectedCards){//better check of card type more opti
         let set=[];
-        for(let i=0; i<this.allCards.length;i++){
-            let e = this.allCards[i]
-            if(e.equals(selectedCards)){
-                set.push(e);
-                this.allCards.splice(i,1);
-                console.log("card remove : "+e.color,e.number,e.filling,e.shape);
+        selectedCards.forEach(element => {
+            for(let i=0; i<this.outputCards.length;i++){
+                let e = this.outputCards[i]
+                if(e.equals(element)){
+                    set.push(e);
+                    this.outputCards.splice(i,1);
+                }
             }
-        }
-        if(set.length!=1){
+        });
+
+        if(set.length<1){
             throw new UnFoundCardException(selectedCards);
         }
         else{
             this.setMade.push(set);
+            this.createDeck(this.nbCards)
         }
     }
 }

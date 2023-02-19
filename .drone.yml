@@ -1,0 +1,40 @@
+kind: pipeline
+type: docker
+name: HyperSet
+
+trigger:
+  event:
+    - push
+
+steps:
+
+  - name: hyperset-build
+    image: plugins/docker
+    settings:
+      dockerfile: Dockerfile
+      context: .
+      registry: hub.codefirst.iut.uca.fr
+      repo: hub.codefirst.iut.uca.fr/remi.arnal/hyper-set
+      username:
+        from_secret: registry_username
+      password:
+        from_secret: registry_password
+
+  - name: hyperset-deployment
+    image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
+    environment:
+      IMAGENAME: hub.codefirst.iut.uca.fr/remi.arnal/hyper-set:latest
+      CONTAINERNAME: hyperset
+      COMMAND: create
+      OVERWRITE: true
+      ADMINS: aurianjault,raphaellacote,bastienjacquelin,remiarnal
+    depends_on : [hyperset-build]
+
+  - name: code-analysis
+    image: sonarsource/sonar-scanner-cli
+    environment:
+        SONAR_TOKEN:
+          from_secret: SONAR_TOKEN
+    commands:
+      - sonar-scanner -Dsonar.projectKey=hyperset -Dsonar.sources=. -Dsonar.host.url=https://codefirst.iut.uca.fr/sonar -Dsonar.login=$${SONAR_TOKEN}
+    depends_on: [ hyperset-build ]
