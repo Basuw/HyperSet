@@ -59,74 +59,71 @@ function checkAttributes(attributes){
     return boolLoop === true;
 }
 
-
-function nbrSets(deck, setSize){
-    matrix = []
-    // Remplie la matrice des valeurs du deck
-    for (i=0;i<setSize;i++){
-        matrix[i] = []
-        for (j=i;j<(deck.length - setSize + i + 1);j++){
-            // Check si ca marche bien
-            matrix[i].push(deck[j]);
-        }
-    }
+// The digit refere to the number of cards required to make a set
+//
+function numberOfSets3(deck){
     let res = 0
-    console.log(matrix)
-    for (p =0 ;p < matrix[0].length;p++){
-        console.log("JE SUIS P")
-        console.log(p)
-        let currentSet = []
-        res += forEachMember(0,p,matrix,currentSet,res)
+    for(i=0;i<deck.length - 2;i++){
+        for(j=i+1;j<deck.length-1;j++){
+            for(k=j+1;k<deck.length;k++){
+                if(isSet([deck[i],deck[j],deck[k]])){
+                    console.log(deck[i],deck[j],deck[k])
+                    res += 1
+                }
+            }
+        }
     }
     return res
 }
 
-function forEachMember(x,y,matrix,tmp,counter){
-    console.log('X  :',x)
-    console.log('Y : ',y)
-    currentSet = tmp
-    res = counter
-    currentSet[x] = (matrix[x][y])
-    console.log(currentSet)
-    if(matrix.length === currentSet.length){
-        console.log("JE SUIS DEDANS")
-        if(isSet(currentSet)){
-            currentSet.pop()
-            return res + 1
-        }
-        else{
-            currentSet.pop()
-            return res
+function numberOfSets4(deck){
+    let res = 0
+    for(i = 0 ; i < deck.length - 3; i ++){
+        for(j = i+1 ; j < deck.length - 2; j++){
+            for(k = j+1 ; k < deck.length - 1 ; k++){
+                for(l = k + 1 ; l < deck.length;l++){
+                    if(isSet([deck[i],deck[j],deck[k]])){
+                        console.log(deck[i],deck[j],deck[k],deck[l])
+                        res += 1
+                    }
+                }
+            }
         }
     }
-    else{
-        console.log("JE SUIS PQS DANS LE IF")
-        console.log(y)
-        console.log(matrix[x+1].length)
-        for(let i=y; i< matrix[x+1].length; i++){
-            console.log("JAPPELLE LE FONC")
-            res += forEachMember(x+1,i,matrix, currentSet,res)
-        }
-        return res
-    }
+    return res
 }
 
-// "Stub de test"
-let card1 = new Card("Purple","1","Triangle","Full");   
-let card2 = new Card("Purple","2","Triangle","Full");   
-let card3 = new Card("Purple","3","Triangle","Full");
-let card8 = new Card("Purple","4","Triangle","Full");
-let card9 = new Card("Purple","5","Triangle","Full");
-let card0 = new Card("Purple","6","Triangle","Full");
-let card10 = new Card("Purple","7","Triangle","Full");
+function numberOfSets5(deck){
+    let res = 0
+    for(i = 0 ; i < deck.length - 4; i ++){
+        for(j = i+1 ; j < deck.length - 3; j++){
+            for(k = j+1 ; k < deck.length - 2 ; k++){
+                for(l = k + 1 ; l < deck.length - 1;l++){
+                    for(m = l + 1; m <deck.length;m++){
+                        if(isSet([deck[i],deck[j],deck[k]])){
+                            console.log(deck[i],deck[j],deck[k],deck[l],deck[m])
+                            res += 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return res
+}
 
-let card4 = new Card("Purple","1","Triangle","Full");   
-let card5 = new Card("Purple","2","Triangle","Full");   
-let card6 = new Card("Purple","1","Triangle","Full");   
+
+function setsCounter(set, numberForSet){
+    if(numberForSet === 3){
+        return numberOfSets3(set)
+    }
+    if(numberForSet === 4){
+        return numberOfSets4(deck)
+    }
+    if(numberForSet === 5){
+        return numberOfSets5(deck)
+    }
+    console.error('The number of cards in a Set is not existing', numberForSet)
+}
 
 
-let deck = [card1,card2,card3,card8,card9,card0,card10]
-
-let nbrSet = nbrSets(deck,3)
-console.log("JE SUIS LE RESULTAT")
-console.log(nbrSet)
