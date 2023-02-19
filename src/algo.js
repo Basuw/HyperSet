@@ -1,62 +1,10 @@
-// Pseudo code
-//
-/*
- * function checkReslt(array <Cards>)
- * {
- *      new array<array<Attrib>> matrice = vide
- *
- *      forEach(array: value)
- *      {
- *          matrice.add(value.getAttrib)
- *      }
- *      Check all length of matrice
- *      for(i = 0; i<matrice[0])
- *          let array<attribut> tab
- *          for (j=0; j<len(matrice))
- *              tab.push matrice[j][i]
- *          if(!checkatrib(tab))
- *          {
- *              return false;
- *          }
- *      return true;
- *
- * }
- *
- *
- * */
+import('./Model/Card.js')
 
-
-function main()
-{
-    // "Stub de test"
-    let card1 = new Card("Purple","1","Triangle","Full");   
-    let card2 = new Card("Purple","2","Triangle","Full");   
-    let card3 = new Card("Purple","3","Triangle","Full");
-    let card8 = new Card("Purple","4","Triangle","Full");
-    let card9 = new Card("Purple","5","Triangle","Full");
-    let card0 = new Card("Purple","6","Triangle","Full");
-    let card10 = new Card("Purple","7","Triangle","Full");
-    
-    let card4 = new Card("Purple","1","Triangle","Full");   
-    let card5 = new Card("Purple","2","Triangle","Full");   
-    let card6 = new Card("Purple","1","Triangle","Full");   
-
-    console.group("TEST TRUE")
-    if(isSet([card1,card2,card3,card8,card9,card0,card10]))
-    {
-        console.log("TRUE")
-    }
-    else
-    {
-        console.log("FALSE")
-    }
-    console.groupEnd()
-}
 
 function isSet(cards)
 {
     let attributesMatrix = [];
-
+    
     cards.forEach(element => {
         attributesMatrix.push(element.getAttributes());
     });
@@ -110,3 +58,72 @@ function checkAttributes(attributes){
     });
     return boolLoop === true;
 }
+
+// The digit refere to the number of cards required to make a set
+//
+function numberOfSets3(deck){
+    let res = 0
+    for(i=0;i<deck.length - 2;i++){
+        for(j=i+1;j<deck.length-1;j++){
+            for(k=j+1;k<deck.length;k++){
+                if(isSet([deck[i],deck[j],deck[k]])){
+                    console.log(deck[i],deck[j],deck[k])
+                    res += 1
+                }
+            }
+        }
+    }
+    return res
+}
+
+function numberOfSets4(deck){
+    let res = 0
+    for(i = 0 ; i < deck.length - 3; i ++){
+        for(j = i+1 ; j < deck.length - 2; j++){
+            for(k = j+1 ; k < deck.length - 1 ; k++){
+                for(l = k + 1 ; l < deck.length;l++){
+                    if(isSet([deck[i],deck[j],deck[k]])){
+                        console.log(deck[i],deck[j],deck[k],deck[l])
+                        res += 1
+                    }
+                }
+            }
+        }
+    }
+    return res
+}
+
+function numberOfSets5(deck){
+    let res = 0
+    for(i = 0 ; i < deck.length - 4; i ++){
+        for(j = i+1 ; j < deck.length - 3; j++){
+            for(k = j+1 ; k < deck.length - 2 ; k++){
+                for(l = k + 1 ; l < deck.length - 1;l++){
+                    for(m = l + 1; m <deck.length;m++){
+                        if(isSet([deck[i],deck[j],deck[k]])){
+                            console.log(deck[i],deck[j],deck[k],deck[l],deck[m])
+                            res += 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return res
+}
+
+
+function setsCounter(set, numberForSet){
+    if(numberForSet === 3){
+        return numberOfSets3(set)
+    }
+    if(numberForSet === 4){
+        return numberOfSets4(deck)
+    }
+    if(numberForSet === 5){
+        return numberOfSets5(deck)
+    }
+    console.error('The number of cards in a Set is not existing', numberForSet)
+}
+
+
