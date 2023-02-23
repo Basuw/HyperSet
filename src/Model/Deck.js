@@ -11,7 +11,7 @@ class Deck{
         this.nbCards=nbCards;
         this.remainingCards=this.remainingCards.concat(this.allCards);// cards in the stack
         this.outputCards=[];// 12 cards lay on the table 
-        this.setMade=[];// array with all the set already mades (array of set)
+        this.setMade=[];// array of array with all the set already mades (array of set)
         this.createDeck(12);
     }
     /**
@@ -20,9 +20,16 @@ class Deck{
      */
     createDeck(nbCards){
         for (let i=0; i<nbCards; i++){
+            if(this.remainingCards.length==0){
+                console.log("PLUS DE CARTES");
+                break;
+            }
             const rand = this.getRandCard();
             this.outputCards.push(this.remainingCards[rand]);
             this.remainingCards.splice(rand,1);
+        }
+        if(){
+            this.createDeck(this.nbCards)
         }
     }
     /**
@@ -51,7 +58,17 @@ class Deck{
      */
     checkSet(selectedCards){
         if(true){//isSet(selectedCards)){
-            this.removeFromoutputCards(selectedCards);
+            if(this.outputCards.length==0){
+                console.log("C'est win")
+                return;    
+            }
+            else{
+                this.removeFromoutputCards(selectedCards);
+            }
+        }
+        else if(this.remainingCards.length==0){
+            console.log("C'est win")
+            return;
         }
     }
     /**
