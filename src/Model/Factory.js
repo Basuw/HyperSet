@@ -3,6 +3,12 @@ class Factory{
         let length=arrayOfAttributes.length
         this.product=this.concreteCardCreation(arrayOfAttributes,length);
     }
+    /**
+     * @brief check if i in arrayOfAttributes
+     * @param {*} i value
+     * @param {*} arrayOfAttributes array
+     * @returns boolean
+     */
     inArray(i,arrayOfAttributes){
         let finded=false;
         for (let j=0;j<arrayOfAttributes.length;j++){
@@ -12,7 +18,13 @@ class Factory{
         }
         return finded
     }
-    attributesRequiredFun(arrayOfAttributes,length){
+    /**
+     * @brief create a matrix with the attributes of the cards : if attributes not defined : value 0
+     * @param {*} arrayOfAttributes 
+     * @param {*} length 
+     * @returns matrix of attributes
+     */
+    attributesRequiredFun(arrayOfAttributes){
         let attributesRequiredTmp=[];
         let nullArray=[0,0,0,0,0];
         for(let i=0;i<5;i++){
@@ -25,9 +37,15 @@ class Factory{
         }
         return attributesRequiredTmp;
     }
+    /**
+     * @biref create the right cards : 3,4,5 attributes
+     * @param {*} arrayOfAttributes 
+     * @param {*} length 
+     * @returns array of all cards
+     */
     concreteCardCreation(arrayOfAttributes, length){
         let tabOfAllCards=[];
-        let attributes=this.attributesRequiredFun(arrayOfAttributes,length);
+        let attributes=this.attributesRequiredFun(arrayOfAttributes);
         let nbAttributes=length
         if(nbAttributes==3){
             for (let c=0; c<nbAttributes-1; c++){

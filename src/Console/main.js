@@ -30,8 +30,10 @@ try {
 console.groupEnd();
 
 
+// CREATE DECK
+
 console.group('Deck');
-let deck  = new Deck([0,1,2,3]);
+let deck  = new Deck([0,1,2,3],3);
 console.log(`All cards : ${deck.allCards.length}`);
 //Display all cards
 console.log(`All cards display`);
@@ -45,14 +47,19 @@ console.log(`remaining cards : ${deck.remainingCards.length}`)
 //     console.log(e.getAttributes());
 //  });
 console.log(`size output ${deck.outputCards.length}`);
-console.log(`Output cards`);
+console.group('Output cards');
 deck.outputCards.forEach(e => {
    console.log(e.getAttributes());
 });
+console.groupEnd();
 console.log(`set already made ${deck.setMade}`);
-// deck.setMade.forEach(e => {
-//     console.log(e.color,e.number,e.shape,e.filling);
-//  });
+deck.setMade.forEach(e => {
+    console.log(e.color,e.number,e.shape,e.filling);
+ });
+
+
+// CHECK SET
+console.log("CHECKING SET")
 
 console.log("Card to remove: ")
 console.log(deck.outputCards[0].getAttributes(),deck.outputCards[1].getAttributes(),deck.outputCards[2].getAttributes())
@@ -60,18 +67,22 @@ let customCard=[deck.outputCards[0],deck.outputCards[1],deck.outputCards[2]];
 deck.checkSet(customCard);
 console.log(`remaining cards : ${deck.remainingCards.length}`)
 console.log(`All cards : ${deck.allCards.length}`)
-
-console.log(`remaining cards : ${deck.remainingCards.length}`)
 // deck.remainingCards.forEach(e => {
 //     console.log(e.getAttributes());
 //  });
-
 console.log(`size output ${deck.outputCards.length}`);
-console.log(`Output cards`);
+console.group('Output cards');
 deck.outputCards.forEach(e => {
    console.log(e.getAttributes());
 });
+console.groupEnd();
 
+console.group('set made');
+console.log(`set already made : ${deck.setMade.length}`);
+deck.setMade.forEach(e => {
+    console.log(e.color,e.number,e.shape,e.filling);
+ });
+ console.groupEnd();
 
 //let deck5  = new Deck([0,1,2,3,4]);
 //console.log(`All cards with 5 attributes size ${deck5.allCards.length}`);
