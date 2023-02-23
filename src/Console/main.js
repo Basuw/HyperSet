@@ -1,8 +1,8 @@
-// import { Card5 } from "../Model/Card5";
-// import('../Model/Card5');
+//import { Card5 } from "../Model/Card5";
+//import('../Model/Card5');
 //import {Card} from '../Model/Card';
 
-console.log("~#Test#~");
+/*console.log("~#Test#~");
 let card4 = new Card4WithoutOutline('red','2','losange','full');
 console.group('Carte 4 attributes');
 console.log(`carte de 4 elements : ${card4.color}`);
@@ -110,14 +110,39 @@ for (let i=0; i<26;i++){
        console.log(e.getAttributes());
     });
 }
-deck.checkSet(customCard);
+deck.checkSet(customCard);*/
 
 // CREATE HYPERSET
 
-let Hcard1 = new Card4WithoutOutline('red', '3', 'diamond', 'full');
-let Hcard2 = new Card4WithoutOutline('red', '2', 'diamond', 'full');
-let Hcard3 = new Card4WithoutOutline('blue', '2', 'diamond', 'stripped');
-let Hcard4 = new Card4WithoutOutline('green', '3', 'diamond', 'empty');
+function checkList(list) {
+    // Vérifier si tous les éléments sont identiques
+    if (list.every(element => element === list[0])) {
+        return 1;
+    }
+
+    if ([...new Set(list)].length === list.length) {
+        return 0;
+    }
+
+    // Si tous les éléments ne sont ni identiques ni différents
+    return 2;
+}
+
+// Exemple d'utilisation
+const list1 = [1, 2, 3, 4];
+console.log(checkList(list1)); // Retourne 0
+
+const list2 = [1, 1, 1, 1];
+console.log(checkList(list2)); // Retourne 1
+
+const list3 = [1, 2, 3, 1];
+console.log(checkList(list3)); // Retourne 2
+
+
+let Hcard1 = new Card4WithoutOutline('red', 3, 'wave', 'full');
+let Hcard2 = new Card4WithoutOutline('red', 3, 'oval', 'empty');
+let Hcard3 = new Card4WithoutOutline('blue', 2, 'oval', 'full');
+let Hcard4 = new Card4WithoutOutline('green', 1, 'wave', 'full');
 
 deckA = [];
 deckB = [];
@@ -128,3 +153,18 @@ deckB.push(Hcard3);
 deckB.push(Hcard4);
 
 console.log(isHyperset(deckA, deckB));
+
+let Icard1 = new Card5('red', 4, 'oval', 'empty','fullO');
+let Icard2 = new Card5('red', 3, 'oval', 'full','fullO');
+let Icard3 = new Card5('red', 2, 'oval', 'squared','fullO');
+let Icard4 = new Card5('green', 2, 'oval', 'pointed','cloudy');
+let Icard5 = new Card5('blue', 3, 'oval', 'squared','sharpy');
+let Icard6 = new Card5('purple', 4, 'oval', 'full','hyphen');
+
+deckAA = [];
+deckBB = [];
+
+deckAA.push(Icard1, Icard2, Icard3);
+deckBB.push(Icard4, Icard5, Icard6);
+
+console.log(isHyperset(deckAA, deckBB));
