@@ -131,4 +131,77 @@ function setsCounter(deck, numberForSet){
     console.error('The number of cards in a Set is not existing', numberForSet)
 }
 
+function createElements(attributs1, attributs2) {
+    if (attributs1 in tabColor) {
+        tabColor.forEach(element => {
+            if (element != attributs1) {
+                if (element != attributs2) {
+                    return element;
+                }
+            }
+        });
+    }
+    if (attributs1 in tabNumber) {
+        tabNumber.forEach(element => {
+            if (element != attributs1) {
+                if (element != attributs2) {
+                    return element;
+                }
+            }
+        });
+    }
+    if (attributs1 in tabShape) {
+        tabShape.forEach(element => {
+            if (element != attributs1) {
+                if (element != attributs2) {
+                    return element;
+                }
+            }
+        });
+    }
+    if (attributs1 in tabFilling) {
+        tabFilling.forEach(element => {
+            if (element != attributs1) {
+                if (element != attributs2) {
+                    return element;
+                }
+            }
+        });
+    }
+    if (attributs1 in tabOutline) {
+        tabOutline.forEach(element => {
+            if (element != attributs1) {
+                if (element != attributs2) {
+                    return element;
+                }
+            }
+        });
+    }
+}
+
+function createCard(cards) {
+
+    let attributesMatrix = [];
+    let carteFinale = [];
+
+    cards.forEach(element => {
+        attributesMatrix.push(element.getAttributes());
+    });
+
+    for (let i = 0; i < attributesMatrix[0].length; i++) {
+        if (attributesMatrix[0][i] == attributesMatrix[1][i]) {
+            carteFinale.push(attributesMatrix[0][i]);
+        }
+        else {
+            carteFinale.push(createElements(attributesMatrix[0][i], attributesMatrix[1][i]))
+        }
+    }
+
+    return carteFinale;
+
+}
+
+function isHyperset(cardsLeft, cardsRight) {
+    return createCard(cardsLeft).join() == createCard(cardsRight).join();
+}
 
