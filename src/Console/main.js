@@ -111,3 +111,20 @@ for (let i=0; i<26;i++){
     });
 }
 deck.checkSet(customCard);
+
+// CREATE HYPERSET
+
+let Hcard1 = new Card4WithoutOutline('red', '3', 'diamond', 'full');
+let Hcard2 = new Card4WithoutOutline('red', '2', 'diamond', 'full');
+let Hcard3 = new Card4WithoutOutline('blue', '2', 'diamond', 'stripped');
+let Hcard4 = new Card4WithoutOutline('green', '3', 'diamond', 'empty');
+
+deckA = [];
+deckB = [];
+
+deckA.push(Hcard1);
+deckA.push(Hcard2);
+deckB.push(Hcard3);
+deckB.push(Hcard4);
+
+console.log(isHyperset(deckA, deckB));
