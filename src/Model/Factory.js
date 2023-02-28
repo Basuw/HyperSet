@@ -1,7 +1,7 @@
 class Factory{
     constructor(arrayOfAttributes){
         let length=arrayOfAttributes.length
-        this.product=this.concreteCardCreation(arrayOfAttributes,length);
+        this.product=this.concreteCardCreation(arrayOfAttributes);
         console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
         console.log("attributesDictionnary",this.attributesDictionnary(arrayOfAttributes,this.funArrayOfAttributes(arrayOfAttributes)))
     }
@@ -38,9 +38,6 @@ class Factory{
         }
         return dico;
     }
-
-
-
     /**
      * @brief check if i in arrayOfAttributes
      * @param {*} i value
@@ -55,34 +52,14 @@ class Factory{
             }
         }
         return finded
-    }
-    /**
-     * @brief create a matrix with the attributes of the cards : if attributes not defined : value 0
-     * @param {*} arrayOfAttributes 
-     * @param {*} length 
-     * @returns matrix of attributes
-     */
-    attributesRequiredFun(arrayOfAttributes){
-        let attributesRequiredTmp=[];
-        let nullArray=[0,0,0,0,0];
-        for(let i=0;i<5;i++){
-            if(!this.inArray(i,arrayOfAttributes)){
-                attributesRequiredTmp.push(nullArray);
-            }
-            else{
-                attributesRequiredTmp.push(ATTRIBUTES[i]);
-            }
-        }
-        console.log('attributesRequiredFun',attributesRequiredTmp);
-        return attributesRequiredTmp;
-    }
+    } 
     /**
      * @biref create the right cards : 3,4,5 attributes
      * @param {*} arrayOfAttributes 
      * @param {*} length 
      * @returns array of all cards
      */
-    concreteCardCreation(arrayOfAttributes, length){
+    concreteCardCreation(attributesDico){
         let tabOfAllCards=[];
         let attributes=this.attributesRequiredFun(arrayOfAttributes);
         let nbAttributes=length
