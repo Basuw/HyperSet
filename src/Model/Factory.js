@@ -3,17 +3,41 @@ class Factory{
         let length=arrayOfAttributes.length
         this.product=this.concreteCardCreation(arrayOfAttributes,length);
         console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
+        console.log("attributesDictionnary",this.attributesDictionnary(arrayOfAttributes,this.funArrayOfAttributes(arrayOfAttributes)))
     }
-    funArrayOfAttributes(arrayOfAttributes){
+    /**
+     *
+     * @param {*} arrayOfIdxAttributes index of attributes in ATTRIBUTES
+     * @returns array of all attributes
+     */
+    funArrayOfAttributes(arrayOfIdxAttributes){
         let attr=[];
-        let l=arrayOfAttributes.length;
-        arrayOfAttributes.forEach(e => {
-            for (let i=0;i<l;l++){    
-                attr.push(e[i]);
+        let l=arrayOfIdxAttributes.length;
+        arrayOfIdxAttributes.forEach(e => {
+            for (let i=0;i<l;i++){    
+                attr.push(ATTRIBUTES[e][i]);
             }
         });
+        return attr;
     }
-
+    /**
+     * 
+     * @param {*} arrayOfIdxAttributes index of attributes in ATTRIBUTES
+     * @param {*} arrayOfAllAttributes array of all attributes
+     * @returns dictionnary with key : attribute and value : array of the possibilities of attributes
+     */
+    attributesDictionnary(arrayOfIdxAttributes,arrayOfAllAttributes){
+        let l=arrayOfIdxAttributes.length;
+        let dico={};
+        for (let i=0;i<l;i++){
+            let tmp=[]
+            for(let j=0;j<l;j++){
+                tmp.push(arrayOfAllAttributes[(i*l)+j]);
+            }
+            dico[IDX_ATTRIBUTES[arrayOfIdxAttributes[i]]]=tmp;
+        }
+        return dico;
+    }
 
 
 
