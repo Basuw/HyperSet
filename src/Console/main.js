@@ -137,34 +137,3 @@ console.log(checkList(list2)); // Retourne 1
 
 const list3 = [1, 2, 3, 1];
 console.log(checkList(list3)); // Retourne 2
-
-
-let Hcard1 = new Card4WithoutOutline('red', 3, 'wave', 'full');
-let Hcard2 = new Card4WithoutOutline('red', 3, 'oval', 'empty');
-let Hcard3 = new Card4WithoutOutline('blue', 2, 'oval', 'full');
-let Hcard4 = new Card4WithoutOutline('green', 1, 'wave', 'full');
-
-deckA = [];
-deckB = [];
-
-deckA.push(Hcard1);
-deckA.push(Hcard2);
-deckB.push(Hcard3);
-deckB.push(Hcard4);
-
-console.log(isHyperset(deckA, deckB));
-
-let Icard1 = new Card5('red', 4, 'oval', 'empty','fullO');
-let Icard2 = new Card5('red', 3, 'oval', 'full','fullO');
-let Icard3 = new Card5('red', 2, 'oval', 'squared','fullO');
-let Icard4 = new Card5('green', 2, 'oval', 'pointed','cloudy');
-let Icard5 = new Card5('blue', 3, 'oval', 'squared','sharpy');
-let Icard6 = new Card5('purple', 4, 'oval', 'full','hyphen');
-
-deckAA = [];
-deckBB = [];
-
-deckAA.push(Icard1, Icard2, Icard3);
-deckBB.push(Icard4, Icard5, Icard6);
-
-console.log(isHyperset(deckAA, deckBB));
