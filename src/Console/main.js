@@ -2,7 +2,7 @@
 //import('../Model/Card5');
 //import {Card} from '../Model/Card';
 
-/*console.log("~#Test#~");
+console.log("~#Test#~");
 let card4 = new Card4WithoutOutline('red','2','losange','full');
 console.group('Carte 4 attributes');
 console.log(`carte de 4 elements : ${card4.color}`);
@@ -110,7 +110,7 @@ for (let i=0; i<26;i++){
        console.log(e.getAttributes());
     });
 }
-deck.checkSet(customCard);*/
+deck.checkSet(customCard);
 
 // CREATE HYPERSET
 

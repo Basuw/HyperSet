@@ -203,7 +203,9 @@ function createCard(cards) {
 
         //S'ils sont tous égaux
         if (listeInter.every(element => element === listeInter[0])) {
-            carteFinale.push(listeInter[0]);
+            l = []
+            l.push(listeInter[0])
+            carteFinale.push(l);
         }
         else {
             //S'ils sont tous différents
@@ -226,10 +228,11 @@ function isHyperset(cardsLeft, cardsRight) {
     right = createCard(cardsRight)
     let verif;
 
-    for (let i = 0; i < left[0].length; i++) {
+    for (let i = 0; i < left.length; i++) {
+
         verif = false;
-        left.forEach(elementG => {
-            right.forEach(elementD => {
+        left[i].forEach(elementG => {
+            right[i].forEach(elementD => {
                 if (elementD == elementG) {
                     verif=true
                 }
