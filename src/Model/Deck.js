@@ -11,20 +11,31 @@ class Deck{
         this.nbCards=nbCards;
         this.remainingCards=this.remainingCards.concat(this.allCards);// cards in the stack
         this.outputCards=[];// 12 cards lay on the table 
-        this.setMade=[];// array with all the set already mades (array of set)
+        this.setMade=[];// array of array with all the set already mades (array of set)
         this.createDeck(12);
     }
+
     /**
      * @brief creation of the deck : 12 cards lay in front of the player
      * @author Bastien Jacquelin
      */
     createDeck(nbCards){
-        for (let i=0; i<nbCards; i++){
-            const rand = this.getRandCard();
-            this.outputCards.push(this.remainingCards[rand]);
-            this.remainingCards.splice(rand,1);
+        if(this.remainingCards.length==0){
+            console.log("PLUS DE CARTES");
+            return;
+        }
+        else{
+            for (let i=0; i<nbCards; i++){
+                const rand = this.getRandCard();
+                this.outputCards.push(this.remainingCards[rand]);
+                this.remainingCards.splice(rand,1);
+            }
+            if(setsCounter(this.outputCards,this.nbCards)==0){
+                this.createDeck(this.nbCards)
+            }
         }
     }
+
     /**
      * 
      * @returns random number in range of the array size 
@@ -34,6 +45,7 @@ class Deck{
         const random = Math.floor(Math.random() * this.remainingCards.length);
         return random;
     }
+
     /**
      * 
      * @param attributes : index of the attributes used
@@ -44,6 +56,7 @@ class Deck{
         let factory = new Factory(attributes)
         return factory.product
     }
+
     /**
      * @brief verification of the validity of the set selected
      * @param {*} selectedCards array of cards : set 
@@ -51,9 +64,20 @@ class Deck{
      */
     checkSet(selectedCards){
         if(true){//isSet(selectedCards)){
-            this.removeFromoutputCards(selectedCards);
+            if(this.outputCards.length==0){
+                console.log("C'est win")
+                return;    
+            }
+            else{
+                this.removeFromoutputCards(selectedCards);
+            }
+        }
+        else if(this.remainingCards.length==0){
+            console.log("C'est win")
+            return;
         }
     }
+    
     /**
      * @brief when a set is made, need to remove the card from the array remainingCards
      * @param {*} selectedCards cards which need to be removed from the outputcards

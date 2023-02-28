@@ -112,10 +112,15 @@ function numberOfSets5(deck){
     return res
 }
 
-
-function setsCounter(set, numberForSet){
+/**
+ * 
+ * @param {*} deck 
+ * @param {*} numberForSet 
+ * @returns 
+ */
+function setsCounter(deck, numberForSet){
     if(numberForSet === 3){
-        return numberOfSets3(set)
+        return numberOfSets3(deck)
     }
     if(numberForSet === 4){
         return numberOfSets4(deck)

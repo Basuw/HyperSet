@@ -95,7 +95,7 @@ class Factory{
             }
         }
         else{
-            //ERROR
+            throw new EmptyParamaterException("ilegal number of attributes");
         }
         return tabOfAllCards
     }
