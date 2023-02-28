@@ -2,7 +2,21 @@ class Factory{
     constructor(arrayOfAttributes){
         let length=arrayOfAttributes.length
         this.product=this.concreteCardCreation(arrayOfAttributes,length);
+        console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
     }
+    funArrayOfAttributes(arrayOfAttributes){
+        let attr=[];
+        let l=arrayOfAttributes.length;
+        arrayOfAttributes.forEach(e => {
+            for (let i=0;i<l;l++){    
+                attr.push(e[i]);
+            }
+        });
+    }
+
+
+
+
     /**
      * @brief check if i in arrayOfAttributes
      * @param {*} i value
@@ -35,6 +49,7 @@ class Factory{
                 attributesRequiredTmp.push(ATTRIBUTES[i]);
             }
         }
+        console.log('attributesRequiredFun',attributesRequiredTmp);
         return attributesRequiredTmp;
     }
     /**

@@ -45,7 +45,6 @@ class Deck{
         const random = Math.floor(Math.random() * this.remainingCards.length);
         return random;
     }
-
     /**
      * 
      * @param attributes : index of the attributes used
@@ -53,8 +52,8 @@ class Deck{
      * @author Bastien Jacquelin
      */
     createCards(attributes){
-        let factory = new Factory(attributes)
-        return factory.product
+        let factory = new Factory(attributes);
+        return factory.product;
     }
 
     /**

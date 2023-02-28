@@ -94,20 +94,20 @@ console.groupEnd();
 
 
 // CHECK SET
-console.log("~~CHECKING ALL SET~~")
+// console.log("~~CHECKING ALL SET~~")
 
-for (let i=0; i<26;i++){
-    console.log(`-----${i}emme itérations-----`)
-    console.log("Card to remove: ")
-    console.log(deck.outputCards[0].getAttributes(),deck.outputCards[1].getAttributes(),deck.outputCards[2].getAttributes())
-    customCard=[deck.outputCards[0],deck.outputCards[1],deck.outputCards[2]];
-    deck.checkSet(customCard);
-    console.log(`remaining cards : ${deck.remainingCards.length}`)
-    console.log(`All cards : ${deck.allCards.length}`)
-    console.log(`size output ${deck.outputCards.length}`);
-    console.group('Output cards');
-    deck.outputCards.forEach(e => {
-       console.log(e.getAttributes());
-    });
-}
-deck.checkSet(customCard);
+// for (let i=0; i<26;i++){
+//     console.log(`-----${i}emme itérations-----`)
+//     console.log("Card to remove: ")
+//     console.log(deck.outputCards[0].getAttributes(),deck.outputCards[1].getAttributes(),deck.outputCards[2].getAttributes())
+//     customCard=[deck.outputCards[0],deck.outputCards[1],deck.outputCards[2]];
+//     deck.checkSet(customCard);
+//     console.log(`remaining cards : ${deck.remainingCards.length}`)
+//     console.log(`All cards : ${deck.allCards.length}`)
+//     console.log(`size output ${deck.outputCards.length}`);
+//     console.group('Output cards');
+//     deck.outputCards.forEach(e => {
+//        console.log(e.getAttributes());
+//     });
+// }
+// deck.checkSet(customCard);

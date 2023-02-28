@@ -1,5 +1,15 @@
 class Card{
-    constructor(){}
+    constructor(attributes){
+        this.attributes=attributes;
+    }
+    createAttributes(arrayOfAttributes){
+
+    }
+
+
+
+
+
     /**
      * 
      * @returns all attributes of a card
