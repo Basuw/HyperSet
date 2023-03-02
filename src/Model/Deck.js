@@ -47,7 +47,6 @@ class Deck{
     }
 
     /**
-     * 
      * @param attributes : index of the attributes used
      * @returns all cards: 81 in case of 4 attributes and 1024 if 5 attributes
      * @author Bastien Jacquelin
