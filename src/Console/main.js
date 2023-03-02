@@ -3,36 +3,26 @@
 //import {Card} from '../Model/Card';
 
 console.log("~#Test#~");
-let card4 = new Card4WithoutOutline('red','2','losange','full');
-console.group('Carte 4 attributes');
-console.log(`carte de 4 elements : ${card4.color}`);
-console.groupEnd();
 
-let card5 = new Card5('blue','2','losange','full','pointillet');
-console.group('Carte 5 attributes');
-console.log(`carte de 5 elements : ${card5.color}`);
-console.log(`carte de 5 elements : ${card5.outline}`);
-console.log(`carte de 5 éléments instance de 5: ${card5 instanceof Card5}`);
-console.log(`carte de 5 éléments accès par méthode idx 0: ${card5.getAttributes()[0]}`);
-console.log(`carte de 5 éléments accès par méthode idx 4: ${card5.getAttributes()[4]}`);
-console.groupEnd();
-console.group('Error');
-try {
-    let errCard = new Card5('blue','','losange','full','pointillet');
-}catch(errCard){
-    if(errCard instanceof EmptyParamaterException){
-        console.log('Error in constructor');
-    }
-    else{
-        console.error(errCard);
-    }
-}
+console.group('Card');//DONE
+console.log('Passed')
+/*
+let  card1=new Card({'color':'red','filling':'full'});
+let  card2=new Card({'color':'red','filling':'full'});
+let  card3=new Card({'color':'red','outline':'full'});
+let  card4=new Card({'color':'red','filling':'empty'});
+console.log(card1.attributes);// ATTRIBUTES
+console.log(card1.getAttributes());// ATTRIBUTES
+console.log(card1.equals(card2));// TRUE
+console.log(card1.equals(card3));//FALSE
+console.log(card1.equals(card4));//FALSE
+*/
 console.groupEnd();
 
 
 // CREATE DECK
-
 console.group('Deck');
+/*
 console.log("~~BEGINNING~~");
 let deck  = new Deck([0,1,2,3],3);
 console.log(`All cards : ${deck.allCards.length}`);
@@ -80,8 +70,8 @@ deck.setMade.forEach(e => {//tab of tab of cards of set made
     })
  });
 // console.log(deck.setMade)
+*/
 console.groupEnd();
-
 //let deck5  = new Deck([0,1,2,3,4]);
 //console.log(`All cards with 5 attributes size ${deck5.allCards.length}`);
 // deck5.allCards.forEach(e => {
