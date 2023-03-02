@@ -1,7 +1,7 @@
 const tabColor = ['red','purple','green','blue','orange'];
 const tabNumber = [1,2,3,4,5];
 const tabShape = ['diamond','oval','squiggle','star','triangle'];
-const tabFilling = ['empty','stripped','full','pointed','squared'];
+const tabFilling = ['empty','stripped','fullO','pointed','squared'];
 const tabOutline = ['full','dot','rect','spade','sharp'];
 const ATTRIBUTES=[tabColor,tabNumber,tabShape,tabFilling,tabOutline];
 
