@@ -20,6 +20,12 @@ console.log(card1.equals(card4));//FALSE
 console.groupEnd();
 
 
+console.group('Factory');
+let fact3=new Factory([0,1,2]);
+let fact4=new Factory([0,1,2,3]);
+let fact5=new Factory([0,1,2,3,4]);
+console.groupEnd();
+
 // CREATE DECK
 console.group('Deck');
 /*

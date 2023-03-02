@@ -10,7 +10,7 @@ class Card{
      * 
      * @returns all attributes of a card
      */
-    getAttributes(){
+    getAttributes(){//working✅
         let att=[];
         Object.entries(this.attributes).forEach(function([key, value]) {
             att.push(value);
@@ -22,7 +22,7 @@ class Card{
      * @param {*} card card to be compared with the current obj
      * @returns boolean
      */
-    equals(card){
+    equals(card){//working✅
         let bool=true;
         Object.entries(this.attributes).forEach(function([key, value]) {
             if(card.attributes[key]!=value){
