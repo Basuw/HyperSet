@@ -21,6 +21,7 @@ console.groupEnd();
 
 
 console.group('Factory');
+console.log('Passed')
 let fact3=new Factory([0,1,2]);
 let fact4=new Factory([0,1,2,3]);
 let fact5=new Factory([0,1,2,3,4]);

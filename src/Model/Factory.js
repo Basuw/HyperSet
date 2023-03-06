@@ -1,11 +1,11 @@
 class Factory{
     constructor(arrayOfAttributes){
         this.dicoAttributes=this.attributesDictionnary(arrayOfAttributes,this.funArrayOfAttributes(arrayOfAttributes));
-        console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
-        console.log("attributesDictionnary",this.dicoAttributes)
-        console.log("attributesName",this.attributesName(this.dicoAttributes));
         this.product=this.concreteCardCreation(arrayOfAttributes);
-        console.log("allCards",this.product);
+        //console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
+        //console.log("attributesDictionnary",this.dicoAttributes)
+        //console.log("attributesName",this.attributesName(this.dicoAttributes));
+        //console.log("allCards",this.product);
 
     }
     /**
