@@ -41,8 +41,8 @@ class CardToHtml {
 
     // Add svg attributes for shape outline
     if(outline !== null){
-      Object.keys(OUTLINE_SPEC.rect).forEach(function(k){
-        path.setAttribute(k,OUTLINE_SPEC.rect[k]);
+      Object.keys(OUTLINE_SPEC[outline]).forEach(function(k){
+        path.setAttribute(k,OUTLINE_SPEC[outline][k]);
       });
 
       path.setAttribute('stroke','#000000');

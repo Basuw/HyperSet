@@ -15,8 +15,8 @@ oval : "m11.49999,95.866646c0,-44.557076 37.442923,-81.999998 82.000002,-81.9999
 
 const OUTLINE_SPEC = {
 full : {},
-dot : { strokedasharray : "1 20", strokelinecap : "round" },
+dot : { "stroke-dasharray" : "1 20", "stroke-linecap" : "round" },
 rect : { "stroke-dasharray" : 70},
-spade : { "stroke-dasharray" : "10 15", "stroke-width" : 70},
+spade : { "stroke-dasharray" : "10 15", "stroke-width" : 40},
 sharp : {}
 };
