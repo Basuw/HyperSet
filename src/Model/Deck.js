@@ -12,10 +12,6 @@ class Deck{
         this.outputCards=[];// 12 cards lay on the table 
         this.setMade=[];// array of array with all the set already mades (array of set)
         this.createDeck(12);
-        // console.log("allCards after deck",this.allCards);
-        console.log("remainingCards after deck",this.remainingCards);
-        console.log("outputCards",this.outputCards);
-        console.log("setMade",this.setMade);
     }
     /**
      * 
@@ -28,7 +24,7 @@ class Deck{
         return factory.product;
     }
     /**
-     * @brief creation of the deck : 12 random cards lay in front of the player
+     * @brief creation of the deck : 12 random cards lay in front of the playe and remove card from the remainingCard array
      * @author Bastien Jacquelin
      */
     createDeck(nbCards){//toTest⌛
@@ -44,6 +40,8 @@ class Deck{
             }
             let nbSets=setsCounter(this.outputCards,this.nbCards);
             console.log("nbSets",nbSets);
+            console.log("outputCards.length",this.outputCards.length);
+            console.log("remainingCards.length",this.remainingCards.length);
             if(nbSets==0){
                 this.createDeck(this.nbCards)
             }
@@ -103,7 +101,6 @@ class Deck{
             throw new UnFoundCardException(selectedCards);
         }
         else{
-            console.log("set",set);
             this.setMade.push(set);
             this.createDeck(this.nbCards)
         }
