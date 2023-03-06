@@ -67,7 +67,6 @@ function numberOfSets3(deck){
         for(j=i+1;j<deck.length-1;j++){
             for(k=j+1;k<deck.length;k++){
                 if(isSet([deck[i],deck[j],deck[k]])){
-                    console.log(deck[i],deck[j],deck[k])
                     res += 1
                 }
             }
@@ -82,8 +81,7 @@ function numberOfSets4(deck){
         for(j = i+1 ; j < deck.length - 2; j++){
             for(k = j+1 ; k < deck.length - 1 ; k++){
                 for(l = k + 1 ; l < deck.length;l++){
-                    if(isSet([deck[i],deck[j],deck[k]])){
-                        console.log(deck[i],deck[j],deck[k],deck[l])
+                    if(isSet([deck[i],deck[j],deck[k],deck[l]])){
                         res += 1
                     }
                 }
@@ -100,8 +98,7 @@ function numberOfSets5(deck){
             for(k = j+1 ; k < deck.length - 2 ; k++){
                 for(l = k + 1 ; l < deck.length - 1;l++){
                     for(m = l + 1; m <deck.length;m++){
-                        if(isSet([deck[i],deck[j],deck[k]])){
-                            console.log(deck[i],deck[j],deck[k],deck[l],deck[m])
+                        if(isSet([deck[i],deck[j],deck[k],deck[l],deck[m]])){
                             res += 1
                         }
                     }
