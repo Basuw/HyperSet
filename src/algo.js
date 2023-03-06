@@ -1,4 +1,4 @@
-import('./Model/Card.js')
+//import('./Model/Card.js')
 
 
 function isSet(cards)
@@ -131,4 +131,116 @@ function setsCounter(deck, numberForSet){
     console.error('The number of cards in a Set is not existing', numberForSet)
 }
 
+function createElements(attributsCartes, listeAttributs) {
+    let l = []
+    let verif;
+    listeAttributs.forEach(element => {
+        verif = false;
+        attributsCartes.forEach(attribCartes => {
+            if (element == attribCartes) {
+                verif = true;
+            }
+        })
+        if (verif == false) {
+            l.push(element);
+        }
+    });
+    return l
+}
 
+function trouveElements(attributsCartes) {
+
+    let x;
+
+    tabColor.forEach(element => {
+        if (element == attributsCartes[0]) {
+            x = createElements(attributsCartes, tabColor);
+        }
+    });
+
+    tabNumber.forEach(element => {
+        if (element == attributsCartes[0]) {
+            x = createElements(attributsCartes, tabNumber);
+        }
+    });
+
+    tabShape.forEach(element => {
+        if (element == attributsCartes[0]) {
+            x = createElements(attributsCartes, tabShape);
+        }
+    });
+
+    tabFilling.forEach(element => {
+        if (element == attributsCartes[0]) {
+            x = createElements(attributsCartes, tabFilling);
+        }
+    });
+
+    tabOutline.forEach(element => {
+        if (element == attributsCartes[0]) {
+            x = createElements(attributsCartes, tabOutline);
+        }
+    });
+
+    return x;
+}
+
+function createCard(cards) {
+
+    let attributesMatrix = [];
+    let carteFinale = [];
+    let listeInter = [];
+
+    cards.forEach(element => {
+        attributesMatrix.push(element.getAttributes());
+    });
+
+    for (let i = 0; i < attributesMatrix[0].length; i++) {
+        listeInter = [];
+        attributesMatrix.forEach(element => {
+            listeInter.push(element[i]);
+        });
+
+        //S'ils sont tous égaux
+        if (listeInter.every(element => element === listeInter[0])) {
+            l = []
+            l.push(listeInter[0])
+            carteFinale.push(l);
+        }
+        else {
+            //S'ils sont tous différents
+            if ([...new Set(listeInter)].length === listeInter.length) {
+                carteFinale.push(trouveElements(listeInter));
+            }
+            //Sinon
+            else {
+                carteFinale.push([]);
+            }
+        }
+    }
+
+    console.log(carteFinale);
+    return carteFinale;
+}
+
+function isHyperset(cardsLeft, cardsRight) {
+    left = createCard(cardsLeft)
+    right = createCard(cardsRight)
+    let verif;
+
+    for (let i = 0; i < left.length; i++) {
+
+        verif = false;
+        left[i].forEach(elementG => {
+            right[i].forEach(elementD => {
+                if (elementD == elementG) {
+                    verif=true
+                }
+            })
+        })
+        if (verif == false) {
+            return false;
+        }
+    }
+    return true;
+}

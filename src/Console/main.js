@@ -57,6 +57,23 @@ function checkList(list) {
     // Si tous les éléments ne sont ni identiques ni différents
     return 2;
 }
+deck.checkSet(customCard);
+
+// CREATE HYPERSET
+
+function checkList(list) {
+    // Vérifier si tous les éléments sont identiques
+    if (list.every(element => element === list[0])) {
+        return 1;
+    }
+
+    if ([...new Set(list)].length === list.length) {
+        return 0;
+    }
+
+    // Si tous les éléments ne sont ni identiques ni différents
+    return 2;
+}
 
 // Exemple d'utilisation
 const list1 = [1, 2, 3, 4];
