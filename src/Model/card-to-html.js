@@ -20,13 +20,13 @@ class CardToHtml {
     // Loop to add svg card.number times
     for(let i = 0; i < card.number; i++) {
       div.appendChild(svg.cloneNode(true))
-      console.log("+SVG: ",svg);
     }
 
-    gameWindow.appendChild(div);
+    gameWindow.appendChild(div);    
   }
 
   static createPath(shape,color,filling,outline,step) {
+    // The way to create svg element (differs from html element)
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
     if(shape === null) shape = 'oval';
@@ -38,6 +38,11 @@ class CardToHtml {
     path.setAttribute('stroke',`#${color}`);
     path.setAttribute('fill',`#${color}`);
     path.setAttribute('stroke-width','18');
+
+    // Case shape do not have color
+    if(filling === 'none') {
+      path.setAttribute('fill','none');
+    }
 
     // Add svg attributes for shape outline
     if(outline !== null){
