@@ -1,7 +1,3 @@
-// import { Card5 } from "../Model/Card5";
-// import('../Model/Card5');
-//import {Card} from '../Model/Card';
-
 console.log("~#Test#~");
 
 console.group('Card');//DONE
@@ -18,17 +14,33 @@ console.log(card1.equals(card3));//FALSE
 console.log(card1.equals(card4));//FALSE
 */
 console.groupEnd();
-
-
 console.group('Factory');
 console.log('Passed')
-let fact3=new Factory([0,1,2]);
-let fact4=new Factory([0,1,2,3]);
-let fact5=new Factory([0,1,2,3,4]);
+// let fact3=new Factory([0,1,2]);
+let fact4=new Factory([0,1,2,3],3);
+//console.log(fact4.attributesDictionnary);
+// let fact5=new Factory([0,1,2,3,4]);
 console.groupEnd();
 
-// CREATE DECK
 console.group('Deck');
+let deck = new Deck([0,1,2,3],3);
+console.log("allCards",deck.allCards);
+console.log("allCards.length",deck.allCards.length);
+console.log("remainingCards.length",deck.remainingCards.length);
+console.log("outputCards",deck.outputCards);
+console.group("checkSet");
+
+console.log("outputCards 0",deck.outputCards[0]);
+console.log("outputCards",deck.outputCards);
+
+console.log("allCards",deck.allCards[0]);
+console.log("remainingCards",deck.remainingCards[0]);
+
+console.log(deck.checkSet([deck.outputCards[0],deck.outputCards[1],deck.outputCards[2]]));
+console.log("remainingCards.length",deck.remainingCards.length);
+console.log("outputCards",deck.outputCards);
+console.groupEnd();
+
 /*
 console.log("~~BEGINNING~~");
 let deck  = new Deck([0,1,2,3],3);
@@ -86,8 +98,6 @@ console.groupEnd();
 // });
 //console.log(`Remaining cards ${deck.remainingCards}`);
 //console.log(`random : ${deck.getRandCard()}`);
-
-console.groupEnd();
 
 
 // CHECK SET
