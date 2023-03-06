@@ -42,3 +42,28 @@ tab.push("yeyee")
 console.log(tab)
 tab.push("gngngn")
 console.log(tab)
+// CREATE HYPERSET
+
+function checkList(list) {
+    // Vérifier si tous les éléments sont identiques
+    if (list.every(element => element === list[0])) {
+        return 1;
+    }
+
+    if ([...new Set(list)].length === list.length) {
+        return 0;
+    }
+
+    // Si tous les éléments ne sont ni identiques ni différents
+    return 2;
+}
+
+// Exemple d'utilisation
+const list1 = [1, 2, 3, 4];
+console.log(checkList(list1)); // Retourne 0
+
+const list2 = [1, 1, 1, 1];
+console.log(checkList(list2)); // Retourne 1
+
+const list3 = [1, 2, 3, 1];
+console.log(checkList(list3)); // Retourne 2
