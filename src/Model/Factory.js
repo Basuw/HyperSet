@@ -2,11 +2,11 @@ class Factory{
     constructor(arrayOfAttributes, nbAttributes){
         this.nbAttr=nbAttributes;
         this.dicoAttributes=this.attributesDictionnary(arrayOfAttributes,this.funArrayOfAttributes(arrayOfAttributes));
-        this.product=this.concreteCardCreation(arrayOfAttributes);        
+        this.product=this.concreteCardCreation(arrayOfAttributes);      
         // console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
-        // console.log("attributesDictionnary",this.dicoAttributes)
-        // console.log("attributesName",this.attributesName(this.dicoAttributes));
-        // console.log("allCards",this.product);
+        console.log("attributesDictionnary",this.dicoAttributes)
+        console.log("attributesName",this.attributesName(this.dicoAttributes));
+        console.log("allCards",this.product);
 
     }
     /**
@@ -84,10 +84,10 @@ class Factory{
             for (let c=0; c<nbAttributes; c++){
                 for (let n=0; n<nbAttributes; n++){
                     for (let s=0; s<nbAttributes; s++){
-                        let attr1=attributes[0];
-                        let attr2=attributes[1];
-                        let attr3=attributes[2];
-                        tabOfAllCards.push(new Card({attr1:dicoAttributes[attr1][c],attr2:dicoAttributes[attr2][n],attr3:dicoAttributes[attr3][s]}))
+                        attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
+                        attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
+                        attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
+                        tabOfAllCards.push(new Card(attribDic))
                     }
                 }
             }
@@ -97,11 +97,12 @@ class Factory{
                 for (let b=0; b<nbAttributes; b++){
                     for (let c=0; c<nbAttributes; c++){
                         for (let d=0; d<nbAttributes; d++){
-                            let attr1=attributes[0];
-                            let attr2=attributes[1];
-                            let attr3=attributes[2];
-                            let attr4=attributes[3];
-                            tabOfAllCards.push(new Card({attr1:dicoAttributes[attr1][a],attr2:dicoAttributes[attr2][b],attr3:dicoAttributes[attr3][c],attr4:dicoAttributes[attr4][d]}))
+                            let attribDic = {};
+                            attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
+                            attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
+                            attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
+                            attribDic[attributes[3]]=dicoAttributes[attributes[3]][d]
+                            tabOfAllCards.push(new Card(attribDic))
                         }
                     }
                 }
@@ -113,12 +114,12 @@ class Factory{
                     for (let c=0; c<nbAttributes; c++){
                         for (let d=0; d<nbAttributes; d++){
                             for (let e=0; e<nbAttributes; e++){
-                                let attr1=attributes[0];
-                                let attr2=attributes[1];
-                                let attr3=attributes[2];
-                                let attr4=attributes[3];
-                                let attr5=attributes[4];
-                                tabOfAllCards.push(new Card({attr1:dicoAttributes[attr1][a],attr2:dicoAttributes[attr2][b],attr3:dicoAttributes[attr3][c],attr4:dicoAttributes[attr4][d],attr5:dicoAttributes[attr5][e]}))
+                                attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
+                                attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
+                                attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
+                                attribDic[attributes[3]]=dicoAttributes[attributes[3]][d]
+                                attribDic[attributes[4]]=dicoAttributes[attributes[4]][e]
+                                tabOfAllCards.push(new Card(attribDic))
                             }
                         }
                     }

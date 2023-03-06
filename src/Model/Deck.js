@@ -12,7 +12,6 @@ class Deck{
         this.outputCards=[];// 12 cards lay on the table 
         this.setMade=[];// array of array with all the set already mades (array of set)
         this.createDeck(12);
-        console.log("nbCards",this.nbCards);
         // console.log("allCards after deck",this.allCards);
         console.log("remainingCards after deck",this.remainingCards);
         console.log("outputCards",this.outputCards);
