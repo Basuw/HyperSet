@@ -101,20 +101,23 @@
         fill="none"
         mask="none"
       />
-        
+
       </svg>
     </div>
   </div>
 
-  <script src="../src/Model/card-to-html.js"></script>
   <script src="../src/Model/Card.js"></script>
+  <script src="../src/Model/Card5.js"></script>
   <script src="../src/Model/Const.js"></script>
+  <script src="../src/Model/card-to-html.js"></script>
   <script>
-    let testCard = new Card();
+    const testCard1 = new Card5('ed5467',2,'diamond','grid','rect');
+    const testCard2 = new Card5('78ef56',3,'star','dot','dot');
 
 
 
-    CardToHtml.create('haha');
+    CardToHtml.create(testCard1);
+    CardToHtml.create(testCard2);
   </script>
 </body>
 </html>
