@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Card Géneration</title>
+    <!-- <base href="https://codefirst.iut.uca.fr/containers/HyperSet-hyperset/"> -->
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/card.css">
+</head>
+
+<body>
+  <!--
+    stroke-dasharray="10 15" tapis stroke-width=40
+    stroke-dasharray="70" rect
+    stroke-dasharray="1 20" round
+    stroke-linecap="round" round
+  -->
+  <svg width="200" height="400" style="position: fixed; z-index: -1">
+    <defs>
+      <pattern
+        id="pattern-stripe"
+        width="2"
+        height="20"
+        patternUnits="userSpaceOnUse"
+      >
+        <rect width="2" height="8" fill="#fff" />
+      </pattern>
+
+      <pattern
+        id="pattern-grid"
+        width="30"
+        height="30"
+        patternUnits="userSpaceOnUse"
+      >
+        <rect width="7.5" height="30" fill="#fff" />
+        <rect width="30" height="7.5" fill="#fff" />
+      </pattern>
+
+      <pattern
+        id="pattern-dot"
+        width="40"
+        height="40"
+        patternUnits="userSpaceOnUse"
+      >
+        <circle cx="18" cy="18" r="12" fill="#fff" />
+      </pattern>
+
+      <mask id="mask-stripe">
+        <rect
+          x="0"
+          y="0"
+          width="200"
+          height="400"
+          fill="url(#pattern-stripe)"
+        />
+      </mask>
+
+      <mask id="mask-dot">
+        <rect
+          x="0"
+          y="0"
+          width="200"
+          height="400"
+          fill="url(#pattern-dot)"
+        />
+      </mask>
+
+      <mask id="mask-grid">
+        <rect
+          x="0"
+          y="0"
+          width="200"
+          height="400"
+          fill="url(#pattern-grid)"
+        />
+      </mask>
+    </defs>
+  </svg>
+
+  <div id="main">
+    <div class="card">
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+
+      <path
+        d="m98.544521,10.311863l-87.830189,189.330815l88.201143,189.644391l88.942329,-190.362741l-89.313283,-188.612465z"
+        stroke-dasharray="1 20"
+        stroke-linecap="round"
+        stroke-width="18"
+        stroke="#000000"
+        fill="#800080"
+        mask="url(#mask-grid)"
+      />
+
+      <path
+        d="m98.544521,10.311863l-87.830189,189.330815l88.201143,189.644391l88.942329,-190.362741l-89.313283,-188.612465z"
+        stroke-dasharray="1 20"
+        stroke-linecap="round"
+        stroke-width="18"
+        stroke="#000000"
+        fill="none"
+        mask="none"
+      />
+
+      </svg>
+    </div>
+  </div>
+
+  <script src="../src/Model/Card.js"></script>
+  <script src="../src/Model/Card5.js"></script>
+  <script src="../src/Model/Const.js"></script>
+  <script src="../src/Model/card-to-html.js"></script>
+  <script>
+    const testCard1 = new Card5('ed5467',3,'diamond','grid','rect');
+    const testCard2 = new Card5('78ef56',3,'star','dot','dot');
+    const testCard3 = new Card5('79ec36',3,'squiggle','stripe','spade');
+    const testCard4 = new Card5('79ec36',3,'oval','full','full');
+    const testCard5 = new Card5('79ec36',3,'triangle','none','spade');
+
+    CardToHtml.create(testCard1);
+    CardToHtml.create(testCard2);
+    CardToHtml.create(testCard3);
+    CardToHtml.create(testCard4);
+    CardToHtml.create(testCard5);
+  </script>
+</body>
+</html>
