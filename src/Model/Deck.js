@@ -27,7 +27,7 @@ class Deck {
    * @brief creation of the deck : 12 random cards lay in front of the playe and remove card from the remainingCard array
    * @author Bastien Jacquelin
    */
-  createDeck(nbCards) {//toTest⌛
+  createDeck(nbCards) {//toTest⌛when more than 12c to d't add other cards
     if (this.remainingCards.length < this.nbCards) {// no more cards
       console.log("PLUS DE CARTES");
       return;
