@@ -1,0 +1,23 @@
+{
+  "name": "hyperset",
+  "version": "1.0.0",
+  "description": "Web version of the famous card game \"SET\"",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://codefirst.iut.uca.fr/git/HyperSet/HyperSet.git"
+  },
+  "keywords": [
+    "Set!",
+    "game",
+    "logic"
+  ],
+  "author": "Raphaël Lacote, Aurian Jault, Rémi Arnal, Bastien Jacquelin",
+  "license": "ISC"
+}
