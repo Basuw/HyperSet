@@ -33,18 +33,24 @@ class Deck {
       return;
     }
     else {
-      for (let i = 0; i < nbCards; i++) {
-        const rand = this.getRandCard();
-        this.outputCards.push(this.remainingCards[rand]);
-        this.remainingCards.splice(rand, 1);
-      }
-      let nbSets = setsCounter(this.outputCards, this.nbCards);
-      console.log("nbSets", nbSets);
-      console.log("outputCards.length", this.outputCards.length);
-      console.log("remainingCards.length", this.remainingCards.length);
-      if (nbSets == 0) {
-        this.createDeck(this.nbCards)
-      }
+        let nbSets = setsCounter(this.outputCards, this.nbCards);
+        if(this.outputCards.length>=12 && nbSets!=0){
+            return
+        }
+        else{
+            for (let i = 0; i < nbCards; i++) {
+                const rand = this.getRandCard();
+                this.outputCards.push(this.remainingCards[rand]);
+                this.remainingCards.splice(rand, 1);
+            }
+            nbSets = setsCounter(this.outputCards, this.nbCards);
+            console.log("nbSets", nbSets);
+            // console.log("outputCards.length", this.outputCards.length);
+            // console.log("remainingCards.length", this.remainingCards.length);
+            if (nbSets == 0) {
+                this.createDeck(this.nbCards)
+            }
+        }
     }
   }
 
