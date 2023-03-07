@@ -37,11 +37,11 @@ console.log("deck.remainingCards",deck.remainingCards)
 console.log("deck.remainingCards length",deck.remainingCards.length)
 console.groupEnd();
 
-let tab=[]
-tab.push("yeyee")
-console.log(tab)
-tab.push("gngngn")
-console.log(tab)
+// let tab=[]
+// tab.push("yeyee")
+// console.log(tab)
+// tab.push("gngngn")
+// console.log(tab)
 // CREATE HYPERSET
 
 function checkList(list) {

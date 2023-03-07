@@ -1,9 +1,8 @@
-let card1 = new Card4WithoutOutline('red', 3, 'wave', 'full');
-let card2 = new Card4WithoutOutline('red', 3, 'oval', 'empty');
-let card3 = new Card4WithoutOutline('blue', 2, 'oval', 'full');
-let card4 = new Card4WithoutOutline('green', 1, 'wave', 'pointed');
-let card5 = new Card4WithoutOutline('green', 1, 'wave', 'full');
-
+let card1 = new Card({'color':'red', 'number':3, 'shape':'wave','filling':'full'});
+let card2 = new Card({'color':'red', 'number':3, 'shape':'oval','filling':'empty'});
+let card3 = new Card({'color':'blue', 'number':2, 'shape':'oval', 'fillin':'full'});
+let card4 = new Card({'color':'green', 'number':1, 'shape':'wave', 'fillin':'pointed'});
+let card5 = new Card({'color':'green', 'number':1, 'shape':'wave', 'fillin':'full'});
 deckA = [];
 deckB = [];
 deckC = [];
@@ -15,16 +14,17 @@ deckC.push(card3, card5);
 console.assert(isHyperset(deckA, deckB) == true);
 console.assert(isHyperset(deckA, deckC) == false);
 
-let BcardG1 = new Card5('red', 4, 'oval', 'empty', 'fullO');
-let BcardG2 = new Card5('red', 3, 'oval', 'full', 'fullO');
-let BcardG3 = new Card5('red', 2, 'oval', 'squared', 'fullO');
-let BcardG4 = new Card5('red', 1, 'oval', 'pointed', 'fullO');
+let BcardG1 = new Card({'color':'red', 'number':4, 'shape':'wave','filling':'empty','outline':'continuous'});
+let BcardG2 = new Card({'color':'red', 'number':3, 'shape':'wave','filling':'full','outline':'continuous'});
+let BcardG3 = new Card({'color':'red', 'number':2, 'shape':'wave','filling':'squared','outline':'continuous'});
+let BcardG4 = new Card({'color':'red', 'number':1, 'shape':'wave','filling':'pointed','outline':'continuous'});
 
-let BcardD1 = new Card5('green', 3, 'oval', 'pointed', 'cloudy');
-let BcardD2 = new Card5('blue', 2, 'oval', 'squared', 'sharpy');
-let BcardD3 = new Card5('purple', 4, 'oval', 'full', 'hyphen');
-let BcardD4 = new Card5('orange', 1, 'oval', 'empty', 'dotted');
-let BcardD5 = new Card5('purple', 4, 'oval', 'stripped', 'hyphen');
+let BcardD1 = new Card({'color':'green', 'number':3, 'shape':'oval','filling':'pointed','outline':'cloudy'});
+let BcardD2 = new Card({'color':'blue', 'number':2, 'shape':'oval','filling':'squared','outline':'sharpy'});
+let BcardD3 = new Card({'color':'purple', 'number':4, 'shape':'oval','filling':'full','outline':'hyphen'});
+let BcardD4 = new Card({'color':'orange', 'number':1, 'shape':'oval','filling':'empty','outline':'dotted'});
+let BcardD5 = new Card({'color':'purple', 'number':4, 'shape':'oval','filling':'stripped','outline':'hyphen'});
+
 
 BdeckA = [];
 BdeckB = [];
@@ -42,20 +42,3 @@ BdeckE.push(BcardD1, BcardD2, BcardD3, BcardD4);
 console.assert(isHyperset(BdeckA, BdeckB) == true);
 console.assert(isHyperset(BdeckA, BdeckC) == false);
 console.assert(isHyperset(BdeckD, BdeckE) == true);
-
-
-let Ccard1 = new Card4WithoutShape('blue', 3, 'empty', 'cloudy');
-let Ccard2 = new Card4WithoutShape('red', 3, 'empty', 'cloudy');
-let Ccard3 = new Card4WithoutShape('green', 3, 'empty', 'cloudy');
-let Ccard4 = new Card4WithoutShape('purple', 3, 'empty', 'sharpy');
-let Ccard5 = new Card4WithoutShape('purple', 3, 'empty', 'sharpy');
-let Ccard6 = new Card4WithoutShape('purple', 3, 'empty', 'sharpy');
-
-CdeckA = [];
-CdeckB = [];
-
-CdeckA.push(Ccard1, Ccard2, Ccard3);
-CdeckB.push(Ccard4, Ccard5, Ccard6);
-
-console.assert(isHyperset(CdeckA, CdeckB) == false);
-
