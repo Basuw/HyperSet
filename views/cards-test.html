@@ -110,17 +110,16 @@
   <script src="../src/Model/Const.js"></script>
   <script src="../src/Model/card-to-html.js"></script>
   <script>
-    // const testCard1 = new Card('ed5467',3,'diamond','grid','rect');
-    // const testCard2 = new Card('78ef56',3,'star','dot','dot');
-    // const testCard3 = new Card('79ec36',3,'squiggle','stripe','spade');
-    // const testCard4 = new Card('79ec36',3,'oval','full','full');
+    const testCard1 = new Card({shape: 'diamond', color: 'ed5467', number: 2, filling: 'grid', outline: 'rect'})
+    const testCard2 = new Card({shape: 'star', color: '78ef56', number: 3, filling: 'dot', outline: 'dot'});
+    const testCard3 = new Card({shape: 'squiggle', color: '79ec36', number: 2, filling: 'stripe', outline: 'spade'});
     const testCard4 = new Card({shape: 'oval', color: '79ec36', number: 3, filling: 'full', outline: 'full'});
     const testCard5 = new Card({shape: 'triangle', color: '79ec36', number: 3, filling: 'none', outline: 'spade'});
     const testCard6 = new Card({shape: 'squiggle', color : '008000', number: 1, filling: 'dot', outline: 'dot'});
 
-    // CardToHtml.create(testCard1);
-    // CardToHtml.create(testCard2);
-    // CardToHtml.create(testCard3);
+    CardToHtml.create(testCard1);
+    CardToHtml.create(testCard2);
+    CardToHtml.create(testCard3);
     CardToHtml.create(testCard4);
     CardToHtml.create(testCard5);
     CardToHtml.create(testCard6);
