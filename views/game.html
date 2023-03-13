@@ -23,6 +23,7 @@
 <body>
     <div id="app">
         <h1>Game - test </h1>
+        <deck-module></deck-module>
     </div>
     <section>
     </section>
@@ -33,7 +34,11 @@
     <script src="/src/Model/Factory.js"></script>
     <script src="/src/Model/Deck.js"></script>
     <script type="module">
+
         import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import CardModule from '/src/Model/card-module.js';
+        import DeckModule from '/src/Model/deck-module.js';
+
         const app = createApp({
             created(){},
             data(){
@@ -43,7 +48,8 @@
                 myFun:function(){}
             }
         });
-        //app.component('FormAddArticle', FormAddArticle);
+        app.component('CardModule', CardModule);
+        app.component('DeckModule', DeckModule);
         app.mount('#app');
     </script>
 </body>
