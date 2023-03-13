@@ -2,7 +2,7 @@ export default{
     emits:[],
     data: function(){
         return{
-            cards:[]
+            card:new Card({"filling":"empty"})
         }
     },
     methods:{
@@ -14,7 +14,7 @@ export default{
     <div v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', margin:'20px 10em 20px 20px'}">
         <div v-for="n in 10">
             {{ n }}
-            <card-module></card-module>
+            <card-module :card={card}></card-module>
         </div>
     </div>
     `
