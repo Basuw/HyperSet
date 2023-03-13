@@ -6,7 +6,7 @@ export default{
     },
     methods:{
         myMethod: function(){
-            yes+=" la mouche"
+            this.yes+=" la mouche"
             return yes
         }
     },
