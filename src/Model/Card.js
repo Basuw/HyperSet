@@ -1,11 +1,13 @@
-class Card{
+class Card {
     /**
      * 
      * @param {*} attributes : dictionnary of attributes : key : name of the attributes and value : value of the attributes
      */
+    // attributes : shape, color, number, outline, filling
     constructor(attributes){
         this.attributes=attributes;
     }
+
     /**
      * 
      * @returns all attributes of a card
@@ -17,6 +19,7 @@ class Card{
          });
          return att;
     }
+
     /**
      * 
      * @param {*} card card to be compared with the current obj
