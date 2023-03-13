@@ -26,14 +26,14 @@ console.group('Deck');
 let deck = new Deck([0,1,2,3],3);
 console.log("deck.outputCards",deck.outputCards)
 console.log("deck.outputCards length",deck.outputCards.length)
-console.log("deck.remainingCards",deck.remainingCards)
+//console.log("deck.remainingCards",deck.remainingCards)
 console.log("deck.remainingCards length",deck.remainingCards.length)
 console.log("check set");
 deck.checkSet([deck.outputCards[0],deck.outputCards[1],deck.outputCards[2]])
 console.log("deck.outputCards",deck.outputCards)
 console.log("deck.outputCards length",deck.outputCards.length)
 
-console.log("deck.remainingCards",deck.remainingCards)
+//console.log("deck.remainingCards",deck.remainingCards)
 console.log("deck.remainingCards length",deck.remainingCards.length)
 console.groupEnd();
 
