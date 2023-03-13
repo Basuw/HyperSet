@@ -130,5 +130,11 @@ h1 {
 
 #picture-logo {
     display: block;
-    margin: auto;
+    margin: 0 auto;
+}
+
+#phrase-finale{
+    font-size:18pt;
+    color:red;
+    font-family:'Comic Sans MS';
 }
