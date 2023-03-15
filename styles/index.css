@@ -138,3 +138,31 @@ h1 {
     color:red;
     font-family:'Comic Sans MS';
 }
+
+#horizontale-center {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#verticale-center {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#high-score-option {
+    font-size: 0.9rem;
+    border-radius: 10px;
+    border: 2px solid;
+
+}
