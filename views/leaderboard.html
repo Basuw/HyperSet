@@ -23,28 +23,41 @@
 
 <body>
     <div id="horizontale-center">
-        <h2>BEST SCORES</h2><br />
+        <h2>BEST SCORES</h2>
+        <br /><br />
 
-        <div id="verticale-center">
 
-        <h5>Select a type of game</h5>
-        <select name="pets" id="high-score-option">
-            <option value="T0">--Choose an option--</option>
-            <option value="T1">Set</option>
-            <option value="T2">Hyperset</option>
-        </select>
+        <form action="#">
+        <div id="div-all-select">
 
-        <h5>Select a variant</h5>
-        <select name="pets" id="high-score-option">
-            <option value="V0">--Choose an option--</option>
-            <option value="V1">3*3</option>
-            <option value="V2">3*4</option>
-            <option value="V3">3*5</option>
-            <option value="V4">4*4</option>
-            <option value="V5">4*5</option>
-            <option value="V6">5*5</option>
-        </select>
+
+            <div id="div-select">
+                <h5>Select a type of game</h5>
+                <select name="pets" id="high-score-option">
+                    <option value="T0">--Choose an option--</option>
+                    <option value="T1">Set</option>
+                    <option value="T2">Hyperset</option>
+                </select>
+            </div>
+
+            <div id="div-select">
+                <h5>Select a variant</h5>
+                <select name="pets" id="high-score-option">
+                    <option value="V0">--Choose an option--</option>
+                    <option value="V1">3*3</option>
+                    <option value="V2">3*4</option>
+                    <option value="V3">3*5</option>
+                    <option value="V4">4*4</option>
+                    <option value="V5">4*5</option>
+                    <option value="V6">5*5</option>
+                </select>
+            </div>
+
         </div>
+
+        <br />
+        <input type="submit" value="Submit" />
+        </form>
 
 
         <br />
@@ -52,7 +65,7 @@
         <table>
             <thead>
                 <tr>
-                    <th colspan="1">Tableau des meilleures scores</th>
+                    <th>Tableau des meilleures scores</th>
                 </tr>
             </thead>
             <tbody>
