@@ -11,42 +11,58 @@
   <section id="left-section">
     <button>Orignal Set Game</button>
 
+    <div>
+      <label>Private</label>
+      <input type='checkbox' />
+    </div>
+
     <span id="or">OR</span>
 
-    <span class="sub-title">Card number to make a set</span>
-    <div id='card-param'>
-      <input type='checkbox' /> <span>3</span>
-      <input type='checkbox' /> <span>4</span>
-      <input type='checkbox' /> <span>5</span>
+    <div class="group">
+      <span class="subtitle">Game parameters</span>
+      <div id="game-param">
+        <label id="chrono-slider-label">js</label><br>
+        <input type="range" min="1" max="8" value="1" class="slider" id="chrono-slider"><br>
+        <label id="player-slider-label">js</label><br>
+        <input type="range" min="0" max="20" value="0" class="slider" id="player-slider"><br>
+        <span>HyperSet</span> <input type='checkbox' /><br>
+      </div>
     </div>
 
-    <span class="sub-title">Attributes to play with</span>
-    <div id='attributes-param'>
-      <input type='checkbox' /> <span>number</span>
-      <input type='checkbox' /> <span>color</span>
-      <input type='checkbox' /> <span>shape</span>
-      <input type='checkbox' /> <span>filling</span>
-      <input type='checkbox' /> <span>outline (c'est nul)</span>
+    <div class="group">
+      <span class="subtitle">Card number to make a set</span>
+      <div id='card-param' class="param">
+        <input type='checkbox' /> <span>3</span>
+        <input type='checkbox' /> <span>4</span>
+        <input type='checkbox' /> <span>5</span>
+      </div>
     </div>
+
+    <div class="group">
+      <span class="subtitle">Attributes to play with</span>
+      <div id='attributes-param' class="param">
+        <input type='checkbox' /> <span>number</span>
+        <input type='checkbox' /> <span>color</span>
+        <input type='checkbox' /> <span>shape</span>
+        <input type='checkbox' /> <span>filling</span>
+        <input type='checkbox' /> <span>outline (honnêtement c'est nul)</span>
+      </div>
+    </div>
+    
   </section>
 
   <section id="right-section">
-    <span>Game parameters</span>
-
-    <span>Private</span> <input type='checkbox' />
-    <span>JE SUIS UN SLIDER</span>
-
-    <span>HyperSet</span> <input type='checkbox' />
-
-    <div id="players">
-      <span>List of player in room:</span>
-      <span>Aurianus</span>
-      <span>Basuw</span>
-      <span>Raph</span>
-      <span>Remrem</span>
+    <div>
+      <span class="subtitle">List of players waiting in the room:</span>
+      <div id="players">
+        <span>Aurianus</span>
+        <span>Basuw</span>
+        <span>Raph</span>
+        <span>Remrem</span>
+      </div>
     </div>
 
-    <button>START</button>
+    <button id="start">START</button>
   </section>
 </body>
 
