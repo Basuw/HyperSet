@@ -3,7 +3,7 @@
 ```mermaid
 
 ---
-title: Diagramme de classe initial
+title: Diagramme de classe initial (ne prenant en compte que les "cards")
 ---
 
 classDiagram
