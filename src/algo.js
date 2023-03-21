@@ -253,9 +253,7 @@ function numberOfHyperset2(deck) {
         for (j = i + 1; j < deck.length - 2; j++) {
             for (k = j + 1; k < deck.length - 1; k++) {
                 for (lapin = k + 1; lapin < deck.length; lapin++) {
-                    console.log(" i,j,k,l :", i, j, k, lapin)
                     if (isHyperset([deck[i], deck[j]], [deck[k], deck[lapin]])) {
-                        console.log(deck[i],deck[j],deck[k],deck[lapin])
                         res += 1
                     }
                 }

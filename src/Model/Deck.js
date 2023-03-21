@@ -11,7 +11,7 @@ class Deck {
     this.remainingCards = this.remainingCards.concat(this.allCards);// cards in the stack, init = all before creation of deck -> remove 
     this.outputCards = [];// 12 cards lay on the table 
     this.setMade = [];// array of array with all the set already mades (array of set)
-    this.createDeck(12);
+    this.createDeck(48);
   }
   /**
    * 
