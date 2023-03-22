@@ -13,7 +13,7 @@ export default{
         }
     },
     template:`
-    <div v-bind:id="idUsed" v-bind:style="{border: '2px solid black', color: 'red', fontSize: '20px', cursor: 'pointer' }" v-on:click="clicked">
+    <div v-bind:id="idUsed" v-bind:style="{border: '2px solid black', color: 'red', fontSize: '20px', cursor: 'pointer',width:'100%',height:'100%' }" v-on:click="clicked">
         {{card.attributes}}
     </div>
     `
