@@ -1,12 +1,16 @@
 export default{
     emits:[],
+    props:{
+        deckR:Deck,
+    },
     data: function(){
         return{
             card:new Card({"filling":"empty"}),
-            deck : new Deck([0,1,2,3],3),
             id:0,
+            deck : new Deck([0,1,2,3],3),
             selectedCards:[],
-            nbCardsSelected:0
+            nbCardsSelected:0,
+            width:'12%'
         }
     },
     methods:{
