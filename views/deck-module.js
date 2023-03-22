@@ -2,7 +2,8 @@ export default{
     emits:[],
     props:{
         deckR:Deck,
-        idRoom:String
+        idRoom:String,
+        mode:String//true for chrono
     },
     data: function(){
         return{
@@ -54,7 +55,8 @@ export default{
     template:`
     <div class="description">
         <h2>Room: {{idRoom}}</h2>
-        <h2>{{timer}}</h2>
+        <h2 v-if="mode">{{timer}}</h2>
+        <h2 v-else="!mode"> Remaining cards: {{deck.remainingCards.length}}/{{deck.allCards.length}}</h2>
         <h2>Players: {{connected}}</h2>
     </div>
     
