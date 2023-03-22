@@ -18,14 +18,14 @@ export default{
             else{
                 if(this.selectedCards[id]!=null){
                     console.log("deselec")
-                    document.querySelector(`#id${id}`).setAttribute("style","border: 2px solid black; margin: 20px; color: red; fontSize: 20px; cursor: pointer");
+                    document.querySelector(`#id${id}`).setAttribute("style","border: 2px solid black; color: red; fontSize: 20px; cursor: pointer");
                     this.nbCardsSelected-=1
                     this.selectedCards[id]=null
                 }
                 else{
                     console.log("Selec")
                     this.selectedCards[id]=this.deck.outputCards[id-1]
-                    document.querySelector(`#id${id}`).setAttribute("style","border: 2px solid red; margin: 20px; color: red; fontSize: 20px; cursor: pointer");
+                    document.querySelector(`#id${id}`).setAttribute("style","border: 2px solid red; color: red; fontSize: 20px; cursor: pointer");
                     this.nbCardsSelected+=1
                     if(this.nbCardsSelected==this.deck.nbCards){
                         console.log("this.selectedCards.length",this.selectedCards.length)
@@ -46,8 +46,8 @@ export default{
         },
     },
     template:`
-    <div v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', margin:'20px 10em 20px 20px'}">
-        <div v-for="n in deck.outputCards.length">
+    <div v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', 'flex-wrap':'wrap',margin:'20px 10em 20px 20px'}">
+        <div class="Cardframe" v-bind:style="{ width:'12%', heigh:'40%', margin:'2% 2% 2% 2%',border: '2px solid green'}" v-for="n in deck.outputCards.length">
             {{ n }}
             <card-module @selected='selected' :id=n :card=this.deck.outputCards[n-1]></card-module>
         </div>

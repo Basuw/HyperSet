@@ -1,5 +1,5 @@
 export default{
-    emits:['unSelected','selected'],
+    emits:['selected'],
     props: ['card','id'],
     data: function(){
         return{
@@ -13,7 +13,7 @@ export default{
         }
     },
     template:`
-    <div v-bind:id="idUsed" v-bind:style="{border: '2px solid black',margin:'20px', color: 'red', fontSize: '20px', cursor: 'pointer' }" v-on:click="clicked">
+    <div v-bind:id="idUsed" v-bind:style="{border: '2px solid black', color: 'red', fontSize: '20px', cursor: 'pointer' }" v-on:click="clicked">
         {{card.attributes}}
     </div>
     `
