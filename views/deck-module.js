@@ -2,6 +2,7 @@ export default{
     emits:[],
     props:{
         deckR:Deck,
+        idRoom:String
     },
     data: function(){
         return{
@@ -10,7 +11,8 @@ export default{
             deck : new Deck([0,1,2,3],3),
             selectedCards:[],
             nbCardsSelected:0,
-            width:'12%'
+            connected:'7/8',
+            timer:'10.51',
         }
     },
     methods:{
@@ -50,7 +52,13 @@ export default{
         },
     },
     template:`
-    <div v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', 'flex-wrap':'wrap',margin:'20px 10em 20px 20px'}">
+    <div class="description">
+        <h2>Room: {{idRoom}}</h2>
+        <h2>{{timer}}</h2>
+        <h2>Players: {{connected}}</h2>
+    </div>
+    
+    <div v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', 'flex-wrap':'wrap',margin:'1rem 25rem 20px 20px'}">
         <div class="Cardframe" v-bind:style="{ width:'12%', height:'15rem', margin:'2% 2% 2% 2%'}" v-for="n in deck.outputCards.length">
             <card-module @selected='selected' :id=n :card=this.deck.outputCards[n-1]></card-module>
         </div>
