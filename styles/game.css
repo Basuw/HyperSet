@@ -1,0 +1,11 @@
+.description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem  4rem  2rem  4rem;
+}
+
+h2{
+    font-size: 28px;
+}
