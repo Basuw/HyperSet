@@ -79,7 +79,7 @@
   </svg>
 
   <div id="main">
-    <div class="card">
+    <!-- <div class="card">
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
 
       <path
@@ -103,7 +103,7 @@
       />
 
       </svg>
-    </div>
+    </div> -->
   </div>
 
   <script src="../src/Model/Card.js"></script>
@@ -115,14 +115,23 @@
     const testCard3 = new Card({shape: 'squiggle', color: '79ec36', number: 2, filling: 'stripe', outline: 'spade'});
     const testCard4 = new Card({shape: 'oval', color: '79ec36', number: 3, filling: 'full', outline: 'full'});
     const testCard5 = new Card({shape: 'triangle', color: '79ec36', number: 3, filling: 'none', outline: 'spade'});
-    const testCard6 = new Card({shape: 'squiggle', color : '008000', number: 1, filling: 'dot', outline: 'dot'});
+    const testCard6 = new Card({shape: 'squiggle', color: '008000', number: 1, filling: 'dot', outline: 'dot'});
+    const testCard7 = new Card({shape: 'diamond', color: 'ff0000', number: 5, filling: 'stripe', outline: null});
 
-    CardToHtml.create(testCard1);
-    CardToHtml.create(testCard2);
-    CardToHtml.create(testCard3);
-    CardToHtml.create(testCard4);
-    CardToHtml.create(testCard5);
-    CardToHtml.create(testCard6);
+    const c1 = new Card({shape: 'oval', color: 'FF0000', number: 1, filling: 'full', outline: null})
+    const c2 = new Card({shape: 'oval', color: '008000', number: 2, filling: 'full', outline: null})
+    const c3 = new Card({shape: 'oval', color: '800080', number: 3, filling: 'full', outline: null})
+
+    // CardToHtml.create(testCard1);
+    // CardToHtml.create(testCard2);
+    // CardToHtml.create(testCard3);
+    // CardToHtml.create(testCard4);
+    // CardToHtml.create(testCard5);
+    // CardToHtml.create(testCard6);
+    //CardToHtml.create(testCard7);
+    CardToHtml.create(c1);
+    CardToHtml.create(c2);
+    CardToHtml.create(c3);
   </script>
 </body>
 </html>
