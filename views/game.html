@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <!-- <base href="https://codefirst.iut.uca.fr/containers/HyperSet-hyperset/"> -->
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+    <link rel="stylesheet" type="text/css" href="/styles/game.css">
+</head>
+
+
+<header>
+    <ul id="nav-bar">
+        <li><a href="/index.html">Home</a></li> <!-- maybe put a logo -->
+        <li><a href="/views/cards-test.html">Card Test</a></li>
+        <li><a href="/views/tutorial.html">Tutorial</a></li>
+        <li><a href="/views/leaderboard.html">Leaderboard</a></li>
+        <li><a href="/views/about.html">About</a></li>
+    </ul>
+</header>
+<body>
+    <div id="app">
+        <deck-module id-room="00000" :mode=false></deck-module>
+    </div>
+    <section>
+    </section>
+    <script src="/src/Model/Exceptions.js"></script>
+    <script src="/src/Model/Card.js"></script>
+    <script src="/src/algo.js"></script>
+    <script src="/src/Model/Const.js"></script>
+    <script src="/src/Model/Factory.js"></script>
+    <script src="/src/Model/Deck.js"></script>
+    <script type="module">
+
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import CardModule from '/views/card-module.js';
+        import DeckModule from '/views/deck-module.js';
+        const app = createApp({
+            created(){},
+            data(){
+                return{}
+            },
+            methods:{
+                myFun:function(){}
+            }
+        });
+        app.component('CardModule', CardModule);
+        app.component('DeckModule', DeckModule);
+        app.mount('#app');
+    </script>
+</body>
+
+</html>
