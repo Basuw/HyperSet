@@ -152,33 +152,33 @@ function trouveElements(attributsCartes) {
 
     let x;
 
-    tabColor.forEach(element => {
+    TAB_COLOR.forEach(element => {
         if (element == attributsCartes[0]) {
-            x = createElements(attributsCartes, tabColor);
+            x = createElements(attributsCartes, TAB_COLOR);
         }
     });
 
-    tabNumber.forEach(element => {
+    TAB_NUMBER.forEach(element => {
         if (element == attributsCartes[0]) {
-            x = createElements(attributsCartes, tabNumber);
+            x = createElements(attributsCartes, TAB_NUMBER);
         }
     });
 
-    tabShape.forEach(element => {
+    TAB_SHAPE.forEach(element => {
         if (element == attributsCartes[0]) {
-            x = createElements(attributsCartes, tabShape);
+            x = createElements(attributsCartes, TAB_SHAPE);
         }
     });
 
-    tabFilling.forEach(element => {
+    TAB_FILLING.forEach(element => {
         if (element == attributsCartes[0]) {
-            x = createElements(attributsCartes, tabFilling);
+            x = createElements(attributsCartes, TAB_FILLING);
         }
     });
 
-    tabOutline.forEach(element => {
+    TAB_OUTLINE.forEach(element => {
         if (element == attributsCartes[0]) {
-            x = createElements(attributsCartes, tabOutline);
+            x = createElements(attributsCartes, TAB_OUTLINE);
         }
     });
 
@@ -191,6 +191,7 @@ function createCard(cards) {
     let carteFinale = [];
     let listeInter = [];
 
+
     cards.forEach(element => {
         attributesMatrix.push(element.getAttributes());
     });
@@ -200,6 +201,7 @@ function createCard(cards) {
         attributesMatrix.forEach(element => {
             listeInter.push(element[i]);
         });
+
 
         //S'ils sont tous égaux
         if (listeInter.every(element => element === listeInter[0])) {
@@ -218,8 +220,6 @@ function createCard(cards) {
             }
         }
     }
-
-    console.log(carteFinale);
     return carteFinale;
 }
 
@@ -244,3 +244,46 @@ function isHyperset(cardsLeft, cardsRight) {
     }
     return true;
 }
+
+function numberOfHyperset2(deck) {
+
+    let res = 0
+
+    for (i = 0; i < deck.length - 3; i++) {
+        for (j = i + 1; j < deck.length - 2; j++) {
+            for (k = j + 1; k < deck.length - 1; k++) {
+                for (lapin = k + 1; lapin < deck.length; lapin++) {
+                    console.log(" i,j,k,l :", i, j, k, lapin)
+                    if (isHyperset([deck[i], deck[j]], [deck[k], deck[lapin]])) {
+                        console.log(deck[i],deck[j],deck[k],deck[lapin])
+                        res += 1
+                    }
+                }
+            }
+        }
+    }
+    return res
+}
+
+function numberOfHyperset3(deck) {
+    let res = 0
+    for (i = 0; i < deck.length - 5; i = i + 1) {
+        for (j = i + 1; j < deck.length - 4; j = j + 1) {
+            for (k = j + 1; k < deck.length - 3; k = k + 1) {
+                for (lolita = k + 1; lolita < deck.length - 2; lolita = lolita + 1) {
+                    for (m = lolita + 1; m < deck.length - 1; m = m + 1) {
+                        for (n = m + 1; n < deck.length; n = n + 1) {
+                            //console.log(i, j, k, lolita, m, n)
+                            if (isHyperset([deck[i], deck[j], deck[k]], [deck[lolita], deck[m], deck[n]])) {
+                                res += 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return res
+
+}
+
