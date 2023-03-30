@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  flex-direction: row;
+  background-color: rebeccapurple;
+}
+
+section {
+  display: flex;
+  padding: 3em;
+  flex-direction: column;
+  height: calc(100vh - 6em);
+}
+
+#left-section {
+  background-color: white;
+  width: 70vw;
+}
+
+#right-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 30vw;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2em;
+    margin-bottom: 1em;
+    background-color: white;
+    border: 0.2rem solid black;
+    border-radius: 0.5em;
+    font-family: var(--font);
+    font-size: 1.5em;
+}
+
+#or {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-size: 4rem;
+  font-weight: bolder;
+  color: black;
+  margin: 1em;
+}
+
+.subtitle {
+  font-family: var(--font);
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  
+}
+
+.group {
+  margin-bottom: 5em;
+}
+
+.param {
+  margin-top: 1em;
+}
+
+#players {
+  display: flex;
+  flex-direction: column;
+}
+
+#players span {
+  margin-top: 1em;
+  font-size: large;
+}
+
+#start {
+  bottom: 3vh;
+  right: 3vw;
+}

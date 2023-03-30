@@ -79,11 +79,11 @@
   </svg>
 
   <div id="main">
-    <div class="card">
+    <!-- <div class="card">
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
 
       <path
-        d="m98.544521,10.311863l-87.830189,189.330815l88.201143,189.644391l88.942329,-190.362741l-89.313283,-188.612465z"
+        d="m67.892902,12.746785c43.231313,-6.717223 107.352741,6.609823 121.028973,58.746408c13.676233,52.136585 -44.848649,161.467192 -45.07116,204.650732c4.566246,56.959708 83.805481,87.929227 22.329944,105.806022c-61.475536,17.876795 -126.122496,-1.855045 -143.73294,-41.933823c-17.610444,-40.07878 49.274638,-120.109409 46.14822,-188.091997c-3.126418,-67.982588 -21.873669,-70.257464 -49.613153,-80.177084c-27.739485,-9.919618 5.678801,-52.283035 48.910115,-59.000258z"
         stroke-dasharray="1 20"
         stroke-linecap="round"
         stroke-width="18"
@@ -93,7 +93,7 @@
       />
 
       <path
-        d="m98.544521,10.311863l-87.830189,189.330815l88.201143,189.644391l88.942329,-190.362741l-89.313283,-188.612465z"
+        d="m67.892902,12.746785c43.231313,-6.717223 107.352741,6.609823 121.028973,58.746408c13.676233,52.136585 -44.848649,161.467192 -45.07116,204.650732c4.566246,56.959708 83.805481,87.929227 22.329944,105.806022c-61.475536,17.876795 -126.122496,-1.855045 -143.73294,-41.933823c-17.610444,-40.07878 49.274638,-120.109409 46.14822,-188.091997c-3.126418,-67.982588 -21.873669,-70.257464 -49.613153,-80.177084c-27.739485,-9.919618 5.678801,-52.283035 48.910115,-59.000258z"
         stroke-dasharray="1 20"
         stroke-linecap="round"
         stroke-width="18"
@@ -103,25 +103,36 @@
       />
 
       </svg>
-    </div>
+    </div> -->
   </div>
 
   <script src="../src/Model/Card.js"></script>
-  <script src="../src/Model/Card5.js"></script>
   <script src="../src/Model/Const.js"></script>
   <script src="../src/Model/card-to-html.js"></script>
   <script>
-    const testCard1 = new Card5('ed5467',3,'diamond','grid','rect');
-    const testCard2 = new Card5('78ef56',3,'star','dot','dot');
-    const testCard3 = new Card5('79ec36',3,'squiggle','stripe','spade');
-    const testCard4 = new Card5('79ec36',3,'oval','full','full');
-    const testCard5 = new Card5('79ec36',3,'triangle','none','spade');
+    // const testCard1 = new Card({shape: 'diamond', color: 'ed5467', number: 2, filling: 'grid', outline: 'rect'})
+    // const testCard2 = new Card({shape: 'star', color: '78ef56', number: 3, filling: 'dot', outline: 'dot'});
+    // const testCard3 = new Card({shape: 'squiggle', color: '79ec36', number: 2, filling: 'stripe', outline: 'spade'});
+    // const testCard4 = new Card({shape: 'oval', color: '79ec36', number: 3, filling: 'full', outline: 'full'});
+    // const testCard5 = new Card({shape: 'triangle', color: '79ec36', number: 3, filling: 'none', outline: 'spade'});
+    // const testCard6 = new Card({shape: 'squiggle', color: '008000', number: 1, filling: 'dot', outline: 'dot'});
+    // const testCard7 = new Card({shape: 'diamond', color: 'ff0000', number: 5, filling: 'stripe', outline: null});
 
-    CardToHtml.create(testCard1);
-    CardToHtml.create(testCard2);
-    CardToHtml.create(testCard3);
-    CardToHtml.create(testCard4);
-    CardToHtml.create(testCard5);
+    // const c1 = new Card({shape: 'oval', color: 'FF0000', number: 1, filling: 'full', outline: null})
+    // const c2 = new Card({shape: 'oval', color: '008000', number: 2, filling: 'full', outline: null})
+    // const c3 = new Card({shape: 'oval', color: '800080', number: 3, filling: 'full', outline: null})
+
+    const c1 = new Card({shape: 'diamond', color: 'green', number: 3, filling: 'empty', outline: null})
+    const c2 = new Card({shape: 'squiggle', color: 'blue', number: 1, filling: 'stripe', outline: null})
+    const c3 = new Card({shape: 'squiggle', color: 'blue', number: 2, filling: 'stripe', outline: null})
+    const c4 = new Card({shape: 'diamond', color: 'green', number: 2, filling: 'empty', outline: null})
+    const c5 = new Card({shape: 'oval', color: 'red', number: 2, filling: 'full', outline: null})
+
+    CardToHtml.create(c1);
+    CardToHtml.create(c2);
+    CardToHtml.create(c3);
+    CardToHtml.create(c4);
+    CardToHtml.create(c5);
   </script>
 </body>
 </html>
