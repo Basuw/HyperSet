@@ -3,7 +3,7 @@ export default{
     props:{
         deckR:Deck,
         idRoom:String,
-        mode:String//true for chrono
+        mode:Boolean//true for chrono
     },
     data: function(){
         return{
