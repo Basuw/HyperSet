@@ -93,6 +93,7 @@ class Deck {
    * @author Bastien Jacquelin
    */
   removeFromoutputCards(selectedCards) {//working✅
+    console.log(JSON.parse(JSON.stringify(selectedCards)))
     let set = [];
     selectedCards.forEach(element => {
       for (let i = 0; i < this.outputCards.length; i++) {

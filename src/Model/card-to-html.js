@@ -1,7 +1,7 @@
 class CardToHtml {
   
   static create(card) {
-    const gameWindow = document.querySelector('#main');
+    // const gamewindow = document.querySelector('#main');
     const div = document.createElement('div');
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
@@ -23,7 +23,8 @@ class CardToHtml {
       div.appendChild(svg.cloneNode(true))
     }
 
-    gameWindow.appendChild(div);    
+    // gamewindow.appendChild(div);
+    return div;
   }
 
   static createPath(shape,color,filling,outline,step) {
@@ -41,17 +42,17 @@ class CardToHtml {
 
     // Add lots of attributes
     path.setAttribute("d",SHAPE_PATH[shape]);
-    path.setAttribute('stroke',`#${color}`);
-    path.setAttribute('fill',`#${color}`);
+    path.setAttribute('stroke',`${color}`);
+    path.setAttribute('fill',`${color}`);
     path.setAttribute('stroke-width','18');
 
     // Case shape do not have color
-    if(filling === 'none') {
+    if(filling === 'none' || filling === 'empty') {
       path.setAttribute('fill','none');
     }
 
     // Add svg attributes for shape outline
-    if(outline !== null) {
+    if(outline !== null && outline!==undefined) {
       Object.keys(OUTLINE_SPEC[outline]).forEach(function(k) {
         path.setAttribute(k,OUTLINE_SPEC[outline][k]);
       });

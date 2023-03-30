@@ -110,28 +110,29 @@
   <script src="../src/Model/Const.js"></script>
   <script src="../src/Model/card-to-html.js"></script>
   <script>
-    const testCard1 = new Card({shape: 'diamond', color: 'ed5467', number: 2, filling: 'grid', outline: 'rect'})
-    const testCard2 = new Card({shape: 'star', color: '78ef56', number: 3, filling: 'dot', outline: 'dot'});
-    const testCard3 = new Card({shape: 'squiggle', color: '79ec36', number: 2, filling: 'stripe', outline: 'spade'});
-    const testCard4 = new Card({shape: 'oval', color: '79ec36', number: 3, filling: 'full', outline: 'full'});
-    const testCard5 = new Card({shape: 'triangle', color: '79ec36', number: 3, filling: 'none', outline: 'spade'});
-    const testCard6 = new Card({shape: 'squiggle', color: '008000', number: 1, filling: 'dot', outline: 'dot'});
-    const testCard7 = new Card({shape: 'diamond', color: 'ff0000', number: 5, filling: 'stripe', outline: null});
+    // const testCard1 = new Card({shape: 'diamond', color: 'ed5467', number: 2, filling: 'grid', outline: 'rect'})
+    // const testCard2 = new Card({shape: 'star', color: '78ef56', number: 3, filling: 'dot', outline: 'dot'});
+    // const testCard3 = new Card({shape: 'squiggle', color: '79ec36', number: 2, filling: 'stripe', outline: 'spade'});
+    // const testCard4 = new Card({shape: 'oval', color: '79ec36', number: 3, filling: 'full', outline: 'full'});
+    // const testCard5 = new Card({shape: 'triangle', color: '79ec36', number: 3, filling: 'none', outline: 'spade'});
+    // const testCard6 = new Card({shape: 'squiggle', color: '008000', number: 1, filling: 'dot', outline: 'dot'});
+    // const testCard7 = new Card({shape: 'diamond', color: 'ff0000', number: 5, filling: 'stripe', outline: null});
 
-    const c1 = new Card({shape: 'oval', color: 'FF0000', number: 1, filling: 'full', outline: null})
-    const c2 = new Card({shape: 'oval', color: '008000', number: 2, filling: 'full', outline: null})
-    const c3 = new Card({shape: 'oval', color: '800080', number: 3, filling: 'full', outline: null})
+    // const c1 = new Card({shape: 'oval', color: 'FF0000', number: 1, filling: 'full', outline: null})
+    // const c2 = new Card({shape: 'oval', color: '008000', number: 2, filling: 'full', outline: null})
+    // const c3 = new Card({shape: 'oval', color: '800080', number: 3, filling: 'full', outline: null})
 
-    // CardToHtml.create(testCard1);
-    // CardToHtml.create(testCard2);
-    // CardToHtml.create(testCard3);
-    // CardToHtml.create(testCard4);
-    // CardToHtml.create(testCard5);
-    // CardToHtml.create(testCard6);
-    //CardToHtml.create(testCard7);
+    const c1 = new Card({shape: 'diamond', color: 'green', number: 3, filling: 'empty', outline: null})
+    const c2 = new Card({shape: 'squiggle', color: 'blue', number: 1, filling: 'stripe', outline: null})
+    const c3 = new Card({shape: 'squiggle', color: 'blue', number: 2, filling: 'stripe', outline: null})
+    const c4 = new Card({shape: 'diamond', color: 'green', number: 2, filling: 'empty', outline: null})
+    const c5 = new Card({shape: 'oval', color: 'red', number: 2, filling: 'full', outline: null})
+
     CardToHtml.create(c1);
     CardToHtml.create(c2);
     CardToHtml.create(c3);
+    CardToHtml.create(c4);
+    CardToHtml.create(c5);
   </script>
 </body>
 </html>
