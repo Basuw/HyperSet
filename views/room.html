@@ -62,7 +62,13 @@
       </div>
     </div>
 
-    <button id="start">START</button>
+    <button id="start" class="action-button">Start</button>
+    <script>
+      let button=document.querySelector("#start")
+      button.addEventListener('click', event => {
+          window.location.href = "/views/game.html";
+      }); 
+  </script>
   </section>
 </body>
 
