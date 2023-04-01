@@ -11,6 +11,7 @@ export default{
             id:0,
             deck : new Deck([0,1,2,3],3),
             selectedCards:[],
+            selectedCardsindex:[],
             nbCardsSelected:0,
             connected:'7/8',
             timer:'10.51',
@@ -18,39 +19,40 @@ export default{
     },
     methods:{
         selected(id){
-            console.log(id);
             if(this.nbCardsSelected>=this.deck.nbCards){
                 this.set();
-                console.log("deb")
             }
             else{
                 if(this.selectedCards[id]!=null){
-                    console.log("deselec")
                     document.querySelector(`#id${id}`).setAttribute("style","border: none;cursor: pointer;");
                     this.nbCardsSelected-=1
                     this.selectedCards[id]=null
+                    this.selectedCardsindex.splice(this.selectedCardsindex.indexOf(id),1)
                 }
                 else{
-                    console.log("Selec")
                     this.selectedCards[id]=this.deck.outputCards[id-1]
                     document.querySelector(`#id${id}`).setAttribute("style","border: 2px solid red; cursor: pointer;");
                     this.nbCardsSelected+=1
+                    this.selectedCardsindex.push(id)
                     if(this.nbCardsSelected==this.deck.nbCards){
-                        console.log("this.selectedCards.length",this.selectedCards.length)
                         this.set();
                     }
                 }
             }
         },
         set(){
-            console.log("Check Set")
-            let checkSet=true;
-            if(checkSet){
-                console.log("this.selectedCards.length",this.selectedCards.length)
-                this.deck.checkSet(this.selectedCards);
-                this.nbCardsSelected=0;
-                this.selectedCards.splice(0,this.selectedCards.length+1)
+            let checkSet=this.deck.checkSet(this.selectedCards);
+            if(checkSet){//is set
+                
             }
+            // remove red outline
+            this.selectedCardsindex.forEach((e) => {
+                document.querySelector(`#id${e}`).setAttribute("style","cursor: pointer;");
+            })
+            // flush array
+            this.nbCardsSelected=0;
+            this.selectedCards.splice(0,this.selectedCards.length+1)
+            this.selectedCardsindex.splice(0,this.selectedCardsindex.length+1)
         },
     },
     template:`

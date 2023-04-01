@@ -70,7 +70,7 @@ class Deck {
    * @author Bastien Jacquelin
    */
   checkSet(selectedCards) {//toTest⌛
-    if (true) {//isSet(selectedCards)){// is a set
+    if (isSet(selectedCards)){// is a set
       if (this.outputCards.length == 0) {
         console.log("C'est win")
         return 2;
