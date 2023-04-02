@@ -30,7 +30,7 @@ class Deck {
   createDeck(nbCards) {//toTest⌛when more than 12c to d't add other cards
     if (this.remainingCards.length < this.nbCards) {// no more cards
       console.log("PLUS DE CARTES");
-      return;
+      return 2;
     }
     else {
         let nbSets = setsCounter(this.outputCards, this.nbCards);
@@ -76,8 +76,7 @@ class Deck {
         return 2;
       }
       else {
-        this.removeFromoutputCards(selectedCards);
-        return 1;
+        return this.removeFromoutputCards(selectedCards);
       }
     }
     else if (this.remainingCards.length < this.nbCards) {
@@ -109,7 +108,7 @@ class Deck {
     }
     else {
       this.setMade.push(set);
-      this.createDeck(this.nbCards)
+      return this.createDeck(this.nbCards)
     }
   }
 }
