@@ -114,6 +114,7 @@ class Factory{
                     for (let c=0; c<nbAttributes; c++){
                         for (let d=0; d<nbAttributes; d++){
                             for (let e=0; e<nbAttributes; e++){
+                                let attribDic = {};
                                 attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
                                 attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
                                 attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
