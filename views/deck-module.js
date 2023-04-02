@@ -22,11 +22,11 @@ export default{
             if(this.nbCardsSelected>=this.deck.nbCards){
                 this.set();
             }
-            else{
-                if(this.selectedCards[id]!=null){
+            else{// pas suffisament de cartes pour un set
+                if(this.selectedCards[id]!=null){// carte déja selectionnée
                     document.querySelector(`#id${id}`).setAttribute("style","border: none;cursor: pointer;");
                     this.nbCardsSelected-=1
-                    this.selectedCards[id]=null
+                    delete this.selectedCards[id]//pb
                     this.selectedCardsindex.splice(this.selectedCardsindex.indexOf(id),1)
                 }
                 else{
@@ -41,6 +41,7 @@ export default{
             }
         },
         set(){
+            console.log("this.selectedCards",this.selectedCards)
             let checkSet=this.deck.checkSet(this.selectedCards);
             if(checkSet){//is set
                 
@@ -51,8 +52,8 @@ export default{
             })
             // flush array
             this.nbCardsSelected=0;
-            this.selectedCards.splice(0,this.selectedCards.length+1)
-            this.selectedCardsindex.splice(0,this.selectedCardsindex.length+1)
+            this.selectedCards=[]
+            this.selectedCardsindex=[]
         },
     },
     template:`
