@@ -15,6 +15,7 @@ export default{
             nbCardsSelected:0,
             connected:'7/8',
             timer:'10.51',
+            win:false,
         }
     },
     methods:{
@@ -43,8 +44,8 @@ export default{
         set(){
             console.log("this.selectedCards",this.selectedCards)
             let checkSet=this.deck.checkSet(this.selectedCards);
-            if(checkSet){//is set
-                
+            if(checkSet==2){//is set
+                this.win=true;
             }
             // remove red outline
             this.selectedCardsindex.forEach((e) => {
@@ -64,8 +65,11 @@ export default{
         <h2>Players: {{connected}}</h2>
     </div>
     
-    <div v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', 'flex-wrap':'wrap',margin:'1rem 18rem 20px 20px'}">
+    <div v-if="!win" v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', 'flex-wrap':'wrap',margin:'1rem 18rem 20px 20px'}">
             <card-module @selected='selected' :id=n :card=this.deck.outputCards[n-1] v-for="n in deck.outputCards.length"/>
+    </div>
+    <div  v-if="win">
+        <h2>Félicitations, vous venez de gagner la partie</2>
     </div>
     `
 }
