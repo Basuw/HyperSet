@@ -4,8 +4,8 @@
   justify-content: center;
   align-items: center;
   width: 6vw;
-  min-height: 26vh;
-  padding: 1.5em;
+  min-height: 30vh;
+  padding: 0.5em 1em 0.5em 1em;
   margin: 1.2rem; /* for better display */
   border: 0.3em solid black;
   border-radius: 2em;
@@ -18,8 +18,8 @@
 
 svg {
   rotate: 90deg;
-  height: 7vh;
-  width: 3vw;
+  height: 10vh;
+  width: 5vw;
 }
 
 .item {
