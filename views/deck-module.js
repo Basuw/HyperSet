@@ -65,7 +65,7 @@ export default{
         <h2>Players: {{connected}}</h2>
     </div>
     
-    <div v-if="!win" v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', 'flex-wrap':'wrap',margin:'1rem 18rem 20px 20px'}">
+    <div v-if="!win" v-bind:style="{border: '3px solid black', fontSize: '20px', display:'flex', 'flex-wrap':'wrap',margin:'1rem 20rem 20px 20px'}">
             <card-module @selected='selected' :id=n :card=this.deck.outputCards[n-1] v-for="n in deck.outputCards.length"/>
     </div>
     <div  v-if="win">

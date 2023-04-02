@@ -1,10 +1,10 @@
 .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 8rem;
-  min-width: 18rem;
+  width: 6vw;
+  min-height: 26vh;
   padding: 1.5em;
   margin: 1.2rem; /* for better display */
   border: 0.3em solid black;
@@ -12,13 +12,17 @@
   background-color: white;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 svg {
-  height: 12vh;
-  width: 6vh;
+  rotate: 90deg;
+  height: 7vh;
+  width: 3vw;
 }
 
 .item {
-  margin: 1rem;
 }
 
 #main {
