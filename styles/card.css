@@ -3,8 +3,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 8rem;
-  min-width: 18rem;
+  height: 12vh;
+  min-width: 14vw;
   padding: 1.5em;
   margin: 1.2rem; /* for better display */
   border: 0.3em solid black;
@@ -14,7 +14,7 @@
 
 svg {
   height: 12vh;
-  width: 6vh;
+  width: 3vw;
 }
 
 .item {
