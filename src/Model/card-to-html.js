@@ -10,6 +10,10 @@ class CardToHtml {
     svg.setAttribute('height','160');
     svg.setAttribute('width','80');
     svg.setAttribute('viewBox','0 0 200 400');
+
+    if(card.attributes['number'] == undefined){
+      card.attributes['number'] = 1;
+    }
     
     // Create paths + add to svg
     for(let j = 0; j < 2; j++) {
@@ -31,14 +35,9 @@ class CardToHtml {
     // The way to create svg element (differs from html element)
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
-    if(shape === null) shape = 'oval';
-    if(color === null) color = '000000';
-    if(filling === null) filling = 'fill';
-
-    // console.log("shape: " + shape);
-    // console.log("color: " + color);
-    // console.log("filling: " + filling);
-    // console.log("outline: " + outline);
+    if(shape === undefined) shape = 'oval';
+    if(color === undefined) color = 'black';
+    if(filling === undefined) filling = 'none';
 
     // Add lots of attributes
     path.setAttribute("d",SHAPE_PATH[shape]);
