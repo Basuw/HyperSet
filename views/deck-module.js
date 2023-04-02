@@ -69,7 +69,7 @@ export default{
             <card-module @selected='selected' :id=n :card=this.deck.outputCards[n-1] v-for="n in deck.outputCards.length"/>
     </div>
     <div  v-if="win">
-        <h2>Félicitations, vous venez de gagner la partie</2>
+        <h2>Félicitations, vous venez de gagner la partie ! 🎉</h2>
     </div>
     `
 }
