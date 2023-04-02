@@ -9,7 +9,7 @@ export default{
         return{
             card:new Card({"filling":"empty"}),
             id:0,
-            deck : new Deck([0,1,2,3],3),
+            deck : new Deck([0,1,2,3],4),
             selectedCards:[],
             selectedCardsindex:[],
             nbCardsSelected:0,

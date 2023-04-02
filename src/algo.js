@@ -18,6 +18,7 @@ function isSet(cards)
             return false;
         }
     }
+    console.log(cards)
     return true;        
 }
 
