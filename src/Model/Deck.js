@@ -89,6 +89,7 @@ class Deck {
           this.removeFromoutputCards(selectedCards);
           return 1;
         }
+      }
     }
     else{// pas un set
       return -1;
