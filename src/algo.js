@@ -14,13 +14,23 @@ function isSet(cards)
         for(let j = 0; j < attributesMatrix.length; j++) {
             listAttributes.push(attributesMatrix[j][i]);
         }
-        if(!checkAttributes(listAttributes)){
+        if(!checkAttributes2(listAttributes,attributesMatrix.length)){
             return false;
         }
     }
     return true;        
 }
 
+
+function checkAttributes2(params,length) {
+  var tab = []
+  params.forEach(element => {
+    if (!tab.includes(element)) {
+      tab.push(element)
+    }
+  });
+  return tab.length === 1 || tab.length === length;
+}
 
 function checkAttributes(attributes){
     let orderingMethod = "null"; // Can only take ["null", "same", "different"]
