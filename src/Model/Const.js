@@ -1,6 +1,6 @@
 const TAB_COLOR = ['red', 'purple', 'green', 'blue', 'orange'];
 const TAB_NUMBER = [1, 2, 3, 4, 5];
-const TAB_SHAPE = ['diamond', 'oval', 'squiggle', 'star', 'triangle'];
+const TAB_SHAPE = ['diamond', 'oval', 'squiggle', 'triangle', 'star'];
 const TAB_FILLING = ['empty', 'stripped', 'full', 'pointed', 'squared'];
 const TAB_OUTLINE = ['continuous', 'dot', 'rect', 'spade', 'sharp'];
 const ATTRIBUTES = [TAB_COLOR, TAB_NUMBER, TAB_SHAPE, TAB_FILLING, TAB_OUTLINE];
@@ -19,5 +19,5 @@ const OUTLINE_SPEC = {
   dot: { "stroke-dasharray": "1 25", "stroke-linecap": "round" },
   rect: { "stroke-dasharray": 70 },
   spade: { "stroke-dasharray": "10 15", "stroke-width": 40 },
-  sharp: {}
+  sharp: { "stroke-dasharray": "30 30", "stroke-width": 25 }
 };

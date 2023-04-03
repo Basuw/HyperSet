@@ -37,7 +37,7 @@ class CardToHtml {
 
     if(shape === undefined) shape = 'oval';
     if(color === undefined) color = 'black';
-    if(filling === undefined) filling = 'none';
+    if(filling === undefined) filling = 'empty';
 
     // Add lots of attributes
     path.setAttribute("d",SHAPE_PATH[shape]);
@@ -55,7 +55,8 @@ class CardToHtml {
       Object.keys(OUTLINE_SPEC[outline]).forEach(function(k) {
         path.setAttribute(k,OUTLINE_SPEC[outline][k]);
       });
-      path.setAttribute('stroke','#000000');
+      if(filling == 'empty') path.setAttribute('stroke',color);
+      else path.setAttribute('stroke','black');
     }
 
     // Diff between two paths in svg
