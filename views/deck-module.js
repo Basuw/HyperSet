@@ -3,13 +3,13 @@ export default{
     props:{
         deck:Deck,
         idRoom:String,
-        mode:Boolean//true for chrono
+        mode:Boolean,//true for chrono
+        hyperSet:Boolean,
     },
     data: function(){
         return{
             card:new Card({"filling":"empty"}),
             id:0,
-            //deck : new Deck([0,1,2],3),
             selectedCards:[],
             selectedCardsindex:[],
             nbCardsSelected:0,

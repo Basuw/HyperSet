@@ -29,8 +29,12 @@ class Deck {
    */
   createDeck(nbCards) {//toTest⌛when more than 12c to d't add other cards
     if (this.remainingCards.length < this.nbCards) {// no more cards
-      console.log("PLUS DE CARTES");
-      return 2;
+      if(setsCounter(this.outputCards, this.nbCards)==0){
+        return 2;
+      }
+      else{
+        return 1;
+      }
     }
     else {
         let nbSets = setsCounter(this.outputCards, this.nbCards);
@@ -45,8 +49,6 @@ class Deck {
             }
             nbSets = setsCounter(this.outputCards, this.nbCards);
             console.log("nbSets", nbSets);
-            // console.log("outputCards.length", this.outputCards.length);
-            // console.log("remainingCards.length", this.remainingCards.length);
             if (nbSets == 0) {
                 this.createDeck(this.nbCards)
             }
@@ -70,20 +72,31 @@ class Deck {
    * @author Bastien Jacquelin
    */
   checkSet(selectedCards) {//toTest⌛
+    console.log("nb set",setsCounter(this.outputCards, this.nbCards))
     if (isSet(selectedCards)){// is a set
-      if (this.outputCards.length == 0) {
+      if (this.outputCards.length == 0) {//plus de deck
         console.log("C'est win")
         return 2;
       }
-      else {
-        return this.removeFromoutputCards(selectedCards);
+      else {//encore des cartes sur le deck
+        if(this.remainingCards.length < this.nbCards){// plus de pile
+          if(setsCounter(this.outputCards, this.nbCards) == 0){//plus de set mais encore des cartes dans le deck
+            return 2;
+          }
+          else{//encore des set
+            console.log("plus la pile")
+            return this.removeFromoutputCards(selectedCards);
+          }
+        }
+        else{// encore de la pile
+          console.log("encore de la pile")
+          return this.removeFromoutputCards(selectedCards);
+        }
       }
     }
-    else if (this.remainingCards.length < this.nbCards) {
-      console.log("C'est win")
-      return 2;
+    else{// pas un set
+      return -1;
     }
-    return 0;
   }
 
   /**
