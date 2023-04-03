@@ -1,11 +1,12 @@
 class Factory{
-    constructor(arrayOfAttributes){
+    constructor(arrayOfAttributes, nbAttributes){
+        this.nbAttr=nbAttributes;
         this.dicoAttributes=this.attributesDictionnary(arrayOfAttributes,this.funArrayOfAttributes(arrayOfAttributes));
-        this.product=this.concreteCardCreation(arrayOfAttributes);
-        //console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
-        //console.log("attributesDictionnary",this.dicoAttributes)
-        //console.log("attributesName",this.attributesName(this.dicoAttributes));
-        //console.log("allCards",this.product);
+        this.product=this.concreteCardCreation(arrayOfAttributes);      
+        // console.log("arrayOfAttributes",this.funArrayOfAttributes(arrayOfAttributes));
+        // console.log("attributesDictionnary",this.dicoAttributes)
+        // console.log("attributesName",this.attributesName(this.dicoAttributes));
+        // console.log("allCards",this.product);
 
     }
     /**
@@ -15,7 +16,7 @@ class Factory{
      */
     funArrayOfAttributes(arrayOfIdxAttributes){//working✅
         let attr=[];
-        let l=arrayOfIdxAttributes.length;
+        let l=this.nbAttr;
         arrayOfIdxAttributes.forEach(e => {
             for (let i=0;i<l;i++){    
                 attr.push(ATTRIBUTES[e][i]);
@@ -34,8 +35,8 @@ class Factory{
         let dico={};
         for (let i=0;i<l;i++){
             let tmp=[]
-            for(let j=0;j<l;j++){
-                tmp.push(arrayOfAllAttributes[(i*l)+j]);
+            for(let j=0;j<this.nbAttr;j++){
+                tmp.push(arrayOfAllAttributes[(i*this.nbAttr)+j]);
             }
             dico[IDX_ATTRIBUTES[arrayOfIdxAttributes[i]]]=tmp;
         }
@@ -78,47 +79,49 @@ class Factory{
         let tabOfAllCards=[];
         let dicoAttributes=this.dicoAttributes
         let attributes=this.attributesName(dicoAttributes);
-        let nbAttributes=attributes.length;
-        console.log('nbAttributes',nbAttributes)
-        if(nbAttributes==3){
-            for (let c=0; c<nbAttributes; c++){
-                for (let n=0; n<nbAttributes; n++){
-                    for (let s=0; s<nbAttributes; s++){
-                        let attr1=attributes[0];
-                        let attr2=attributes[1];
-                        let attr3=attributes[2];
-                        tabOfAllCards.push(new Card({attr1:dicoAttributes[attr1][c],attr2:dicoAttributes[attr2][n],attr3:dicoAttributes[attr3][s]}))
+        let nbAttributes=this.nbAttr;
+        if(attributes.length==3){
+            for (let a=0; a<nbAttributes; a++){
+                for (let b=0; b<nbAttributes; b++){
+                    for (let c=0; c<nbAttributes; c++){
+                        let attribDic = {};
+                        attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
+                        attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
+                        attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
+                        tabOfAllCards.push(new Card(attribDic))
                     }
                 }
             }
         }
-        else if(nbAttributes==4){
+        else if(attributes.length==4){
             for (let a=0; a<nbAttributes; a++){
                 for (let b=0; b<nbAttributes; b++){
                     for (let c=0; c<nbAttributes; c++){
                         for (let d=0; d<nbAttributes; d++){
-                            let attr1=attributes[0];
-                            let attr2=attributes[1];
-                            let attr3=attributes[2];
-                            let attr4=attributes[3];
-                            tabOfAllCards.push(new Card({attr1:dicoAttributes[attr1][a],attr2:dicoAttributes[attr2][b],attr3:dicoAttributes[attr3][c],attr4:dicoAttributes[attr4][d]}))
+                            let attribDic = {};
+                            attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
+                            attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
+                            attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
+                            attribDic[attributes[3]]=dicoAttributes[attributes[3]][d]
+                            tabOfAllCards.push(new Card(attribDic))
                         }
                     }
                 }
             }
         }
-        else if(nbAttributes==5){
+        else if(attributes.length==5){
             for (let a=0; a<nbAttributes; a++){
                 for (let b=0; b<nbAttributes; b++){
                     for (let c=0; c<nbAttributes; c++){
                         for (let d=0; d<nbAttributes; d++){
                             for (let e=0; e<nbAttributes; e++){
-                                let attr1=attributes[0];
-                                let attr2=attributes[1];
-                                let attr3=attributes[2];
-                                let attr4=attributes[3];
-                                let attr5=attributes[4];
-                                tabOfAllCards.push(new Card({attr1:dicoAttributes[attr1][a],attr2:dicoAttributes[attr2][b],attr3:dicoAttributes[attr3][c],attr4:dicoAttributes[attr4][d],attr5:dicoAttributes[attr5][e]}))
+                                let attribDic = {};
+                                attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
+                                attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
+                                attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
+                                attribDic[attributes[3]]=dicoAttributes[attributes[3]][d]
+                                attribDic[attributes[4]]=dicoAttributes[attributes[4]][e]
+                                tabOfAllCards.push(new Card(attribDic))
                             }
                         }
                     }
@@ -130,61 +133,4 @@ class Factory{
         }
         return tabOfAllCards
     }
-    /*
-    concreteCardCreation(attributesDico){//progress
-        let tabOfAllCards=[];
-        let attributes=this.attributesRequiredFun(arrayOfAttributes);
-        let nbAttributes=length
-        if(nbAttributes==3){
-            for (let c=0; c<nbAttributes-1; c++){
-                for (let n=0; n<nbAttributes-1; n++){
-                    for (let s=0; s<nbAttributes-1; s++){
-                        tabOfAllCards.push(new Card3(ATTRIBUTES[0][c],ATTRIBUTES[1][n],ATTRIBUTES[2][s]));
-                    }
-                }
-            }
-        }
-        else if(nbAttributes==4){
-            for (let n=0; n<nbAttributes-1; n++){
-                for (let s=0; s<nbAttributes-1; s++){
-                    for (let f=0; f<nbAttributes-1; f++){
-                        for (let o=0; o<nbAttributes-1; o++){
-                            if(attributes[0][0]===0){
-                                tabOfAllCards.push(new Card4WithoutColor(attributes[1][n],attributes[2][s],attributes[3][f],attributes[4][o]));
-                            }
-                            else if(attributes[1][0]===0){
-                                tabOfAllCards.push(new Card4WithoutNumber(attributes[0][n],attributes[2][s],attributes[3][f],attributes[4][o]));
-                            }
-                            else if(attributes[2][0]===0){
-                                tabOfAllCards.push(new Card4WithoutShape(attributes[0][n],attributes[1][s],attributes[3][f],attributes[4][o]));
-                            }
-                            else if(attributes[3][0]===0){
-                                tabOfAllCards.push(new Card4WithoutFilling(attributes[0][n],attributes[1][s],attributes[2][f],attributes[4][o]));
-                            }
-                            else if(attributes[4][0]===0){
-                                tabOfAllCards.push(new Card4WithoutOutline(attributes[0][n],attributes[1][s],attributes[2][f],attributes[3][o]));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        else if(nbAttributes==5){
-            for (let c=0; c<nbAttributes-1; c++){
-                for (let n=0; n<nbAttributes-1; n++){
-                    for (let s=0; s<nbAttributes-1; s++){
-                        for (let f=0; f<nbAttributes-1; f++){
-                            for (let o=0; o<nbAttributes-1; o++){
-                                tabOfAllCards.push(new Card5(attributes[0][c],attributes[1][n],attributes[2][s],attributes[3][f],attributes[4][o]));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        else{
-            throw new EmptyParamaterException("ilegal number of attributes");
-        }
-        return tabOfAllCards
-    }*/
 }

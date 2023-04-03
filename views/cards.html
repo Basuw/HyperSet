@@ -10,28 +10,50 @@
 </head>
 
 <body>
+  <!--
+    stroke-dasharray="10 15" tapis
+    stroke-dasharray="70" rect
+    stroke-dasharray="1 20" round
+    stroke-linecap="round" round
+  -->
   <svg width="200" height="400" style="position: fixed; z-index: -1">
     <defs>
+
       <path
         id="squiggle"
         d="m67.892902,12.746785c43.231313,-6.717223 107.352741,6.609823 121.028973,58.746408c13.676233,52.136585 -44.848649,161.467192 -45.07116,204.650732c4.566246,56.959708 83.805481,87.929227 22.329944,105.806022c-61.475536,17.876795 -126.122496,-1.855045 -143.73294,-41.933823c-17.610444,-40.07878 49.274638,-120.109409 46.14822,-188.091997c-3.126418,-67.982588 -21.873669,-70.257464 -49.613153,-80.177084c-27.739485,-9.919618 5.678801,-52.283035 48.910115,-59.000258z"
+        stroke-dasharray="70"
+        stroke="#000000"
       />
+
       <path
         id="oval"
         d="m11.49999,95.866646c0,-44.557076 37.442923,-81.999998 82.000002,-81.999998l12.000015,0c44.557076,0 81.999992,37.442923 81.999992,81.999998l0,206.133354c0,44.557098 -37.442917,82 -81.999992,82l-12.000015,0c-44.557079,0 -82.000002,-37.442902 -82.000002,-82l0,-206.133354z"
+        stroke-dasharray="10 15"
+        stroke="#000000"
       />
+
       <path
         id="diamond"
         d="m98.544521,10.311863l-87.830189,189.330815l88.201143,189.644391l88.942329,-190.362741l-89.313283,-188.612465z"
-      />
+        stroke-dasharray="1 20"
+        stroke-linecap="round"
+        stroke="#000000"
+        />
+
       <path 
         id="star" 
         d="m 153.53055,282.69958 -53.612735,-28.26169 -53.675199,28.1429 10.311217,-59.72213 -43.352051,-42.35147 59.985437,-8.6486 26.882141,-54.31757 26.76179,54.37694 59.9662,8.78146 -43.44577,42.25534 z"
-      />
+        stroke-dasharray="30"
+        stroke="#000000"
+        />
+
       <path
         id="triangle"
         d="M 185.39061,360.66757 14.609416,360.51258 100.06241,42.356689 Z"
-      />
+        stroke="#000000"
+        />
+
       <pattern
         id="pattern-stripe"
         width="2"
@@ -95,125 +117,126 @@
   <div id="main">
     <div class="card">
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#squiggle" fill="#008002" mask="url(#mask-dot)"></use>
-        <use href="#squiggle" stroke="#008002" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#squiggle" fill="#008002" mask="url(#mask-stripe)"></use>
-        <use href="#squiggle" stroke="#008002" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#squiggle" fill="#008002" mask="url(#mask-grid)"></use>
-        <use href="#squiggle" stroke="#008002" fill="none" stroke-width="18"></use>
-      </svg>
-    </div>
-
-    <div class="card">
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#triangle" fill="#0000FF" mask="url(#mask-stripe)"></use>
-        <use href="#triangle" stroke="#0000FF" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#triangle" fill="#0000FF" mask="url(#mask-stripe)"></use>
-        <use href="#triangle" stroke="#0000FF" fill="none" stroke-width="18" "></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#triangle" fill="#0000FF" mask="url(#mask-stripe)"></use>
-        <use href="#triangle" stroke="#0000FF" fill="none" stroke-width="18"></use>
-      </svg>
-    </div>
-
-    <div class="card">
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#star" fill="#FFA500" mask="url(#mask-stripe)"></use>
-        <use href="#star" stroke="#FFA500" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#star" fill="#FFA500" mask="url(#mask-dot)"></use>
-        <use href="#star" stroke="#FFA500" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#star" fill="#FFA500" mask="url(#mask-grid)"></use>
-        <use href="#star" stroke="#FFA500" fill="none" stroke-width="18"></use>
-      </svg>
-    </div>
-
-    <div class="card">
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#diamond" fill="#ff0000" mask="url(#mask-stripe)"></use>
-        <use href="#diamond" stroke="#ff0000" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#diamond" fill="#ff0000" mask="url(#mask-stripe)"></use>
-        <use href="#diamond" stroke="#ff0000" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#diamond" fill="#ff0000" mask="url(#mask-stripe)"></use>
-        <use href="#diamond" stroke="#ff0000" fill="none" stroke-width="18"></use>
-      </svg>
-    </div>
-
-    <div class="card">
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" fill="#800080" mask="url(#mask-stripe)"></use>
-        <use href="#oval" stroke="#800080" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" fill="#800080" mask="url(#mask-stripe)"></use>
-        <use href="#oval" stroke="#800080" fill="none" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" fill="#800080" mask="url(#mask-stripe)"></use>
-        <use href="#oval" stroke="#800080" fill="none" stroke-width="18"></use>
-      </svg>
-    </div>
-
-    <div class="card">
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" stroke="#800080" fill="#800080" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" stroke="#800080" fill="#800080" stroke-width="18"></use>
-      </svg>
-
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" stroke="#800080" fill="#800080" stroke-width="18"></use>
-      </svg>
-    </div>
-
-    <div class="card">
-      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" stroke="#800080" fill="#800080" stroke-width="18"></use>
+        <use href="#oval" stroke="#800080" fill="#800080" stroke-width="40"></use>
       </svg>
 
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
         <use href="#oval" fill="#800080" mask="url(#mask-grid)"></use>
-        <use href="#oval" stroke="#800080" fill="none" stroke-width="18"></use>
+        <use href="#oval" stroke="#800080" fill="none" stroke-width="40"></use>
       </svg>
 
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
         <use href="#oval" fill="#800080" mask="url(#mask-stripe)"></use>
-        <use href="#oval" stroke="#800080" fill="none" stroke-width="18"></use>
+        <use href="#oval" stroke="#800080" fill="none" stroke-width="40"></use>
       </svg>
 
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
         <use href="#oval" fill="#800080" mask="url(#mask-dot)"></use>
-        <use href="#oval" stroke="#800080" fill="none" stroke-width="18"></use>
+        <use href="#oval" stroke="#800080" fill="none" stroke-width="40"></use>
       </svg>
 
       <svg class="item" height="160" width="80" viewBox="0 0 200 400">
-        <use href="#oval" stroke="#800080" fill="none" stroke-width="18"></use>
+        <use href="#oval" stroke="#800080" fill="none" stroke-width="40">'</use>
+      </svg>
+    </div>
+
+    <div class="card">
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#squiggle" stroke="#FF0000" fill="#FF0000" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#squiggle" fill="#FF0000" mask="url(#mask-grid)"></use>
+        <use href="#squiggle" stroke="#FF0000" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#squiggle" fill="#FF0000" mask="url(#mask-stripe)"></use>
+        <use href="#squiggle" stroke="#FF0000" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#squiggle" fill="#FF0000" mask="url(#mask-dot)"></use>
+        <use href="#squiggle" stroke="#FF0000" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#squiggle" stroke="#FF0000" fill="none" stroke-width="18"></use>
+      </svg>
+    </div>
+
+    <div class="card">
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#diamond" stroke="#008000" fill="#008000" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#diamond" fill="#008000" mask="url(#mask-grid)"></use>
+        <use href="#diamond" stroke="#008000" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#diamond" fill="#008000" mask="url(#mask-stripe)"></use>
+        <use href="#diamond" stroke="#008000" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#diamond" fill="#008000" mask="url(#mask-dot)"></use>
+        <use href="#diamond" stroke="#008000" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#diamond" stroke="#008000" fill="none" stroke-width="18"></use>
+      </svg>
+    </div>
+
+    <div class="card">
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#star" stroke="#0000FF" fill="#0000FF" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#star" fill="#0000FF" mask="url(#mask-grid)"></use>
+        <use href="#star" stroke="#0000FF" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#star" fill="#0000FF" mask="url(#mask-stripe)"></use>
+        <use href="#star" stroke="#0000FF" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#star" fill="#0000FF" mask="url(#mask-dot)"></use>
+        <use href="#star" stroke="#0000FF" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#star" stroke="#0000FF" fill="none" stroke-width="18"></use>
+      </svg>
+    </div>
+
+    <div class="card">
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#triangle" stroke="#FFA500" fill="#FFA500" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#triangle" fill="#FFA500" mask="url(#mask-grid)"></use>
+        <use href="#triangle" stroke="#FFA500" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#triangle" fill="#FFA500" mask="url(#mask-stripe)"></use>
+        <use href="#triangle" stroke="#FFA500" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#triangle" fill="#FFA500" mask="url(#mask-dot)"></use>
+        <use href="#triangle" stroke="#FFA500" fill="none" stroke-width="18"></use>
+      </svg>
+
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+        <use href="#triangle" stroke="#FFA500" fill="none" stroke-width="18"></use>
       </svg>
     </div>
   </div>

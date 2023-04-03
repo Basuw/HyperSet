@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Card Géneration</title>
+    <!-- <base href="https://codefirst.iut.uca.fr/containers/HyperSet-hyperset/"> -->
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/card.css">
+</head>
+
+<body>
+  <!--
+    stroke-dasharray="10 15" tapis stroke-width=40
+    stroke-dasharray="70" rect
+    stroke-dasharray="1 20" round
+    stroke-linecap="round" round
+  -->
+  <svg width="200" height="400" style="position: fixed; z-index: -1">
+    <defs>
+      <pattern
+        id="pattern-stripe"
+        width="2"
+        height="20"
+        patternUnits="userSpaceOnUse"
+      >
+        <rect width="2" height="8" fill="#fff" />
+      </pattern>
+
+      <pattern
+        id="pattern-grid"
+        width="30"
+        height="30"
+        patternUnits="userSpaceOnUse"
+      >
+        <rect width="7.5" height="30" fill="#fff" />
+        <rect width="30" height="7.5" fill="#fff" />
+      </pattern>
+
+      <pattern
+        id="pattern-dot"
+        width="40"
+        height="40"
+        patternUnits="userSpaceOnUse"
+      >
+        <circle cx="18" cy="18" r="12" fill="#fff" />
+      </pattern>
+
+      <mask id="mask-stripe">
+        <rect
+          x="0"
+          y="0"
+          width="200"
+          height="400"
+          fill="url(#pattern-stripe)"
+        />
+      </mask>
+
+      <mask id="mask-dot">
+        <rect
+          x="0"
+          y="0"
+          width="200"
+          height="400"
+          fill="url(#pattern-dot)"
+        />
+      </mask>
+
+      <mask id="mask-grid">
+        <rect
+          x="0"
+          y="0"
+          width="200"
+          height="400"
+          fill="url(#pattern-grid)"
+        />
+      </mask>
+    </defs>
+  </svg>
+
+  <div id="main">
+    <!-- <div class="card">
+      <svg class="item" height="160" width="80" viewBox="0 0 200 400">
+
+      <path
+        d="m67.892902,12.746785c43.231313,-6.717223 107.352741,6.609823 121.028973,58.746408c13.676233,52.136585 -44.848649,161.467192 -45.07116,204.650732c4.566246,56.959708 83.805481,87.929227 22.329944,105.806022c-61.475536,17.876795 -126.122496,-1.855045 -143.73294,-41.933823c-17.610444,-40.07878 49.274638,-120.109409 46.14822,-188.091997c-3.126418,-67.982588 -21.873669,-70.257464 -49.613153,-80.177084c-27.739485,-9.919618 5.678801,-52.283035 48.910115,-59.000258z"
+        stroke-dasharray="1 20"
+        stroke-linecap="round"
+        stroke-width="18"
+        stroke="#000000"
+        fill="#800080"
+        mask="url(#mask-grid)"
+      />
+
+      <path
+        d="m67.892902,12.746785c43.231313,-6.717223 107.352741,6.609823 121.028973,58.746408c13.676233,52.136585 -44.848649,161.467192 -45.07116,204.650732c4.566246,56.959708 83.805481,87.929227 22.329944,105.806022c-61.475536,17.876795 -126.122496,-1.855045 -143.73294,-41.933823c-17.610444,-40.07878 49.274638,-120.109409 46.14822,-188.091997c-3.126418,-67.982588 -21.873669,-70.257464 -49.613153,-80.177084c-27.739485,-9.919618 5.678801,-52.283035 48.910115,-59.000258z"
+        stroke-dasharray="1 20"
+        stroke-linecap="round"
+        stroke-width="18"
+        stroke="#000000"
+        fill="none"
+        mask="none"
+      />
+
+      </svg>
+    </div> -->
+  </div>
+
+  <script src="../src/Model/Card.js"></script>
+  <script src="../src/Model/Const.js"></script>
+  <script src="../src/Model/card-to-html.js"></script>
+  <script>
+    // const testCard1 = new Card({shape: 'diamond', color: 'ed5467', number: 2, filling: 'grid', outline: 'rect'})
+    // const testCard2 = new Card({shape: 'star', color: '78ef56', number: 3, filling: 'dot', outline: 'dot'});
+    // const testCard3 = new Card({shape: 'squiggle', color: '79ec36', number: 2, filling: 'stripe', outline: 'spade'});
+    // const testCard4 = new Card({shape: 'oval', color: '79ec36', number: 3, filling: 'full', outline: 'full'});
+    // const testCard5 = new Card({shape: 'triangle', color: '79ec36', number: 3, filling: 'none', outline: 'spade'});
+    // const testCard6 = new Card({shape: 'squiggle', color: '008000', number: 1, filling: 'dot', outline: 'dot'});
+    // const testCard7 = new Card({shape: 'diamond', color: 'ff0000', number: 5, filling: 'stripe', outline: null});
+
+    // const c1 = new Card({shape: 'oval', color: 'FF0000', number: 1, filling: 'full', outline: null})
+    // const c2 = new Card({shape: 'oval', color: '008000', number: 2, filling: 'full', outline: null})
+    // const c3 = new Card({shape: 'oval', color: '800080', number: 3, filling: 'full', outline: null})
+
+    // const c1 = new Card({shape: 'diamond', color: 'green', number: 3, filling: 'empty', outline: null})
+    // const c2 = new Card({shape: 'squiggle', color: 'blue', number: 1, filling: 'stripe', outline: null})
+    // const c3 = new Card({shape: 'squiggle', color: 'blue', number: 2, filling: 'stripe', outline: null})
+    // const c4 = new Card({shape: 'diamond', color: 'green', number: 2, filling: 'empty', outline: null})
+    // const c5 = new Card({shape: 'oval', color: 'red', number: 2, filling: 'full', outline: null})
+    // const c6 = new Card({shape: 'oval', color: 'red', number: 1, filling: 'dot', outline: null})
+
+    const c1 = new Card({shape: 'diamond',color: 'orange' ,filling: 'grid', outline: 'dot'})
+    
+    CardToHtml.create(c1);
+  </script>
+</body>
+</html>

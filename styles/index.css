@@ -62,27 +62,6 @@
      background-color: white;
 }
 
-.action-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    padding: 1.2em;
-    padding-top: 2.1rem;
-    background-color: white;
-    border: 0.2rem solid black;
-    border-radius: 0.5em;
-    font-family: var(--font);
-    font-size: 1.5em;
-    transition: 0.3s;
-}
-
-.action-button:hover {
-    background-color: black;
-    color: white;
-    transform: scale(1.2);
-    cursor: pointer;
-}
 
 h1 {
     color: black;
@@ -107,4 +86,34 @@ h1 {
     display: flex;
     flex-direction: column;
     margin-top: auto;
+}
+
+#tuto-block {
+    height: 86.7vh;
+    background-color: white;
+    border: 0.5rem solid black;
+}
+
+#p-block {
+    height: 75%;
+    width: 75%; 
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#picture-logo {
+    display: block;
+    margin: 0 auto;
+}
+
+#phrase-finale{
+    font-size:18pt;
+    color:red;
+    font-family:'Comic Sans MS';
 }

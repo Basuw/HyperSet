@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <!-- <base href="https://codefirst.iut.uca.fr/containers/HyperSet-hyperset/"> -->
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+    <link rel="stylesheet" type="text/css" href="/styles/game.css">
+    <link rel="stylesheet" type="text/css" href="/styles/card.css">
+    <link rel="icon" type="image/x-icon" href="/resources/favicon.ico">
+</head>
+
+
+<header>
+    <ul id="nav-bar">
+        <li><a href="/index.html">Home</a></li> <!-- maybe put a logo -->
+        <li><a href="/views/cards-test.html">Card Test</a></li>
+        <li><a href="/views/tutorial.html">Tutorial</a></li>
+        <li><a href="/views/leaderboard.html">Leaderboard</a></li>
+        <li><a href="/views/about.html">About</a></li>
+    </ul>
+</header>
+<body>
+    <svg width="200" height="400" style="position: fixed; z-index: -1">
+        <defs>
+          <pattern
+            id="pattern-stripe"
+            width="2"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect width="2" height="8" fill="#fff" />
+          </pattern>
+    
+          <pattern
+            id="pattern-grid"
+            width="30"
+            height="30"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect width="7.5" height="30" fill="#fff" />
+            <rect width="30" height="7.5" fill="#fff" />
+          </pattern>
+    
+          <pattern
+            id="pattern-dot"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="18" cy="18" r="12" fill="#fff" />
+          </pattern>
+    
+          <mask id="mask-stripped">
+            <rect
+              x="0"
+              y="0"
+              width="200"
+              height="400"
+              fill="url(#pattern-stripe)"
+            />
+          </mask>
+    
+          <mask id="mask-pointed">
+            <rect
+              x="0"
+              y="0"
+              width="200"
+              height="400"
+              fill="url(#pattern-dot)"
+            />
+          </mask>
+    
+          <mask id="mask-squared">
+            <rect
+              x="0"
+              y="0"
+              width="200"
+              height="400"
+              fill="url(#pattern-grid)"
+            />
+          </mask>
+        </defs>
+      </svg>
+    <div id="app">
+        <deck-module id-room="00000" :mode=false></deck-module>
+    </div>
+    <section>
+    </section>
+    <script src="/src/Model/card-to-html.js"></script>
+    <script src="/src/Model/Exceptions.js"></script>
+    <script src="/src/Model/Card.js"></script>
+    <script src="/src/algo.js"></script>
+    <script src="/src/Model/Const.js"></script>
+    <script src="/src/Model/Factory.js"></script>
+    <script src="/src/Model/Deck.js"></script>
+    <script type="module">
+
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import CardModule from '/views/card-module.js';
+        import DeckModule from '/views/deck-module.js';
+        const app = createApp({
+            created(){},
+            data(){
+                return{}
+            },
+            methods:{
+                myFun:function(){}
+            }
+        });
+        app.component('CardModule', CardModule);
+        app.component('DeckModule', DeckModule);
+        app.mount('#app');
+    </script>
+</body>
+
+</html>
