@@ -14,6 +14,8 @@ function isSet(cards)
         for(let j = 0; j < attributesMatrix.length; j++) {
             listAttributes.push(attributesMatrix[j][i]);
         }
+        console.log("JE SUIS LES ATTRIBUTS")
+        console.log(listAttributes)
         if(!checkAttributes2(listAttributes,attributesMatrix.length)){
             return false;
         }
@@ -30,6 +32,7 @@ function checkAttributes2(params,length) {
       tab.push(element)
     }
   });
+  console.log(tab.length === 1 || tab.length === length)
   return tab.length === 1 || tab.length === length;
 }
 
