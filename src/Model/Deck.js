@@ -29,8 +29,12 @@ class Deck {
    */
   createDeck(nbCards) {//toTest⌛when more than 12c to d't add other cards
     if (this.remainingCards.length < this.nbCards) {// no more cards
-      console.log("PLUS DE CARTES");
-      return 2;
+      if(setsCounter(this.outputCards, this.nbCards)==0){
+        return 2;
+      }
+      else{
+        return 1;
+      }
     }
     else {
         let nbSets = setsCounter(this.outputCards, this.nbCards);
@@ -45,8 +49,6 @@ class Deck {
             }
             nbSets = setsCounter(this.outputCards, this.nbCards);
             console.log("nbSets", nbSets);
-            // console.log("outputCards.length", this.outputCards.length);
-            // console.log("remainingCards.length", this.remainingCards.length);
             if (nbSets == 0) {
                 this.createDeck(this.nbCards)
             }
@@ -70,6 +72,7 @@ class Deck {
    * @author Bastien Jacquelin
    */
   checkSet(selectedCards) {//toTest⌛
+    console.log("nb set",setsCounter(this.outputCards, this.nbCards))
     if (isSet(selectedCards)){// is a set
       if (this.outputCards.length == 0) {//plus de deck
         console.log("C'est win")
@@ -81,13 +84,13 @@ class Deck {
             return 2;
           }
           else{//encore des set
-            this.removeFromoutputCards(selectedCards);
-            return 1;
+            console.log("plus la pile")
+            return this.removeFromoutputCards(selectedCards);
           }
         }
         else{// encore de la pile
-          this.removeFromoutputCards(selectedCards);
-          return 1;
+          console.log("encore de la pile")
+          return this.removeFromoutputCards(selectedCards);
         }
       }
     }
