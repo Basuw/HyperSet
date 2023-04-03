@@ -81,9 +81,10 @@ class Factory{
         let attributes=this.attributesName(dicoAttributes);
         let nbAttributes=this.nbAttr;
         if(attributes.length==3){
-            for (let c=0; c<nbAttributes; c++){
-                for (let n=0; n<nbAttributes; n++){
-                    for (let s=0; s<nbAttributes; s++){
+            for (let a=0; a<nbAttributes; a++){
+                for (let b=0; b<nbAttributes; b++){
+                    for (let c=0; c<nbAttributes; c++){
+                        let attribDic = {};
                         attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
                         attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
                         attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]
@@ -114,6 +115,7 @@ class Factory{
                     for (let c=0; c<nbAttributes; c++){
                         for (let d=0; d<nbAttributes; d++){
                             for (let e=0; e<nbAttributes; e++){
+                                let attribDic = {};
                                 attribDic[attributes[0]]=dicoAttributes[attributes[0]][a]
                                 attribDic[attributes[1]]=dicoAttributes[attributes[1]][b]
                                 attribDic[attributes[2]]=dicoAttributes[attributes[2]][c]

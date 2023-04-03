@@ -15,8 +15,8 @@ const SHAPE_PATH = {
 };
 
 const OUTLINE_SPEC = {
-  full: {},
-  dot: { "stroke-dasharray": "1 20", "stroke-linecap": "round" },
+  continuous: {},
+  dot: { "stroke-dasharray": "1 25", "stroke-linecap": "round" },
   rect: { "stroke-dasharray": 70 },
   spade: { "stroke-dasharray": "10 15", "stroke-width": 40 },
   sharp: {}

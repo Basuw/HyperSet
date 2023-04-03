@@ -1,24 +1,28 @@
 .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 8rem;
-  min-width: 18rem;
-  padding: 1.5em;
+  width: 6vw;
+  min-height: 30vh;
+  padding: 0.5em 1em 0.5em 1em;
   margin: 1.2rem; /* for better display */
   border: 0.3em solid black;
   border-radius: 2em;
   background-color: white;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 svg {
-  height: 12vh;
-  width: 6vh;
+  rotate: 90deg;
+  height: 10vh;
+  width: 5vw;
 }
 
 .item {
-  margin: 1rem;
 }
 
 #main {
