@@ -30,7 +30,6 @@ class Deck {
   createDeck(nbCards) {//toTest⌛when more than 12c to d't add other cards
     if (this.remainingCards.length < this.nbCards) {// no more cards
       console.log("PLUS DE CARTES");
-      return;
     }
     else {
         let nbSets = setsCounter(this.outputCards, this.nbCards);
@@ -71,20 +70,29 @@ class Deck {
    */
   checkSet(selectedCards) {//toTest⌛
     if (isSet(selectedCards)){// is a set
-      if (this.outputCards.length == 0) {
+      if (this.outputCards.length == 0) {//plus de deck
         console.log("C'est win")
         return 2;
       }
-      else {
-        this.removeFromoutputCards(selectedCards);
-        return 1;
+      else {//encore des cartes sur le deck
+        if(this.remainingCards.length < this.nbCards){// plus de pile
+          if(setsCounter(this.outputCards, this.nbCards) == 0){//plus de set mais encore des cartes dans le deck
+            return 2;
+          }
+          else{//encore des set
+            this.removeFromoutputCards(selectedCards);
+            return 1;
+          }
+        }
+        else{// encore de la pile
+          this.removeFromoutputCards(selectedCards);
+          return 1;
+        }
       }
     }
-    else if (this.remainingCards.length < this.nbCards) {
-      console.log("C'est win")
-      return 2;
+    else{// pas un set
+      return -1;
     }
-    return 0;
   }
 
   /**
