@@ -1,7 +1,7 @@
 export default{
     emits:[],
     props:{
-        deckR:Deck,
+        deck:Deck,
         idRoom:String,
         mode:Boolean//true for chrono
     },
@@ -9,7 +9,7 @@ export default{
         return{
             card:new Card({"filling":"empty"}),
             id:0,
-            deck : new Deck([0,1,2],3),
+            //deck : new Deck([0,1,2],3),
             selectedCards:[],
             selectedCardsindex:[],
             nbCardsSelected:0,

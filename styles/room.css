@@ -1,14 +1,17 @@
-body {
-  display: flex;
-  flex-direction: row;
-  background-color: rebeccapurple;
-}
-
 section {
   display: flex;
   padding: 3em;
   flex-direction: column;
   height: calc(100vh - 6em);
+}
+
+.title2 {
+  font-size: 4em;
+  margin-bottom: 1em;
+}
+
+.title3 {
+  font-size: 2em;
 }
 
 #left-section {
@@ -23,8 +26,10 @@ section {
   width: 30vw;
 }
 
-button {
+.button {
     display: flex;
+    width: 30vw;
+    color: black;
     justify-content: center;
     align-items: center;
     padding: 1.2em;
@@ -34,17 +39,13 @@ button {
     border-radius: 0.5em;
     font-family: var(--font);
     font-size: 1.5em;
+    transition: 0.3s;
 }
 
-#or {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  font-family: var(--font);
-  font-size: 4rem;
-  font-weight: bolder;
-  color: black;
-  margin: 1em;
+.button:hover {
+  background-color: black;
+  color: white;
+  scale: 1.1;
 }
 
 .subtitle {
@@ -54,7 +55,7 @@ button {
 }
 
 input[type="checkbox"] {
-  
+  margin-left: 1rem;
 }
 
 .group {
@@ -63,16 +64,6 @@ input[type="checkbox"] {
 
 .param {
   margin-top: 1em;
-}
-
-#players {
-  display: flex;
-  flex-direction: column;
-}
-
-#players span {
-  margin-top: 1em;
-  font-size: large;
 }
 
 #start {

@@ -37,13 +37,13 @@
 
     </div>
     <div id="right" class="column">
-        <button class="action-button">Create solo game</button>
+        <button id="soloGame" class="action-button">Create solo game</button>
         <button class="action-button">Join game</button>
         <button id="newGame" class="action-button">New Game</button>
         <script>
-            let button=document.querySelector("#newGame")
+            let button=document.querySelector("#soloGame")
             button.addEventListener('click', event => {
-                window.location.href = "/views/room.html";
+                window.location.href = "/views/game.html";
             }); 
         </script>
     </div>

@@ -10,9 +10,9 @@
     <link rel="stylesheet" type="text/css" href="/styles/index.css">
     <link rel="stylesheet" type="text/css" href="/styles/game.css">
     <link rel="stylesheet" type="text/css" href="/styles/card.css">
+    <link rel="stylesheet" type="text/css" href="/styles/room.css">
     <link rel="icon" type="image/x-icon" href="/resources/favicon.ico">
 </head>
-
 
 <header>
     <ul id="nav-bar">
@@ -86,7 +86,9 @@
         </defs>
       </svg>
     <div id="app">
-        <deck-module id-room="00000" :mode=false></deck-module>
+        <room-component id='Room' @send-deck="sendDeck"></room-component>
+         
+        <deck-module :id-room="00000" :deck=this.deck :mode=false v-if="this.deck != null"></deck-module>
     </div>
     <section>
     </section>
@@ -102,17 +104,32 @@
         import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
         import CardModule from '/views/card-module.js';
         import DeckModule from '/views/deck-module.js';
+        import RoomComponent from '/views/room-component.js';
+
         const app = createApp({
-            created(){},
+            created()
+            {
+
+            },
+            mounted()
+            {},
             data(){
-                return{}
+                return{
+                  deck: null
+                }
             },
             methods:{
-                myFun:function(){}
+                sendDeck:function(deck) {
+                  this.deck = deck
+                  document.querySelector('#Room').setAttribute("style","display: none")
+                  document.querySelector('#Game').setAttribute("style","display: flex");
+                  console.log('send deck')
+                }
             }
         });
-        app.component('CardModule', CardModule);
-        app.component('DeckModule', DeckModule);
+        app.component('CardModule', CardModule)
+            .component('DeckModule', DeckModule)
+            .component('RoomComponent', RoomComponent);
         app.mount('#app');
     </script>
 </body>

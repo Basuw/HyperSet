@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Room - HyperSet</title>
+  <link rel='stylesheet' type='text/css' href='/styles/style.css' />
+  <link rel='stylesheet' type='text/css' href='/styles/room.css' />
+</head>
+
+<body>
+  <section id="left-section">
+    <button>Orignal Set Game</button>
+
+    <div>
+      <label>Private</label>
+      <input type='checkbox' />
+    </div>
+
+    <span id="or">OR</span>
+
+    <div class="group">
+      
+
+  <section id="right-section">
+    <div>
+      <span class="subtitle">List of players waiting in the room:</span>
+      <div id="players">
+        <span>Aurianus</span>
+        <span>Basuw</span>
+        <span>Raph</span>
+        <span>Remrem</span>
+      </div>
+    </div>
+
+    <button id="start" class="action-button">Start</button>
+    <script>
+      let button=document.querySelector("#start")
+      button.addEventListener('click', event => {
+          window.location.href = "/views/game.html";
+      }); 
+  </script>
+  </section>
+</body>
+
+</html>
