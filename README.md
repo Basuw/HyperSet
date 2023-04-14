@@ -7,7 +7,13 @@
 
 ## Description of the project 
 
-null
+Web version of the famous card game Set! with many game mode such as 5x5. 
+
+### Remaining 
+
+- multiplayer
+- chrono mode
+- IA versus
 
 ## Project Convention
 
@@ -17,3 +23,10 @@ null
 - Directories names my_directory
 - Files names -> my_file.js
 - No useless comments
+
+## Authors :
+
+- Raphaël Lacote
+- Aurian Jault
+- Rémi Arnal
+- Bastien Jacquelin
